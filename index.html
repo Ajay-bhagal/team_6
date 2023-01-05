@@ -6,12 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unsplash</title>
     <style>
+        
+        /* nav bar css */
+        *{
+            margin: 0px;
+            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+
+        }
+        div#header {
+            padding-top:10px;
+            padding-left: 20px;
+            position: sticky;
+            top: 0px;
+
+        }
+        .nav{
+            background-color: white;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+        }
+    
+        .nav_first_div {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .nav_first_div_first_part {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 80%;
+            /* border-right: 3px solid #767676; */
+        }
+    
+
+        a {
+            text-decoration: none;
+            font-size: 17px;
+            padding: 15px;
+            color: rgb(124, 124, 124);
+
+        }
+
+        i.fa-solid.fa-magnifying-glass {
+            font-size: 26px;
+            color: #767676;
+            padding: 10px;
+        }
+
+        span {
+            padding: 0px 10px;
+            /* display: flex; */
+            justify-content: center;
+            height: 48px;
+            /* border: 1px solid black; */
+            border-radius: 28px;
+            background: #EEEEEE;
+        }
+
+        input.search_header{
+            border: none;
+            width: 625px;
+            height: 50px;
+            color: rgb(124, 124, 124);
+            font-size: 18px;
+            background: none;
+        }
+        input.search_header:focus{
+            outline: none;
+        }
+
+        div.scrollmenu {
+            /* background-color: #EEEEEE; */
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            /* display: inline-block; */
+            color: #767676;
+            /* text-align: center; */
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        #style-2::-webkit-scrollbar {
+            /* width: 1px; */
+            /* color: red; */
+            display: none;
+            background-color: #F5F5F5;
+        }
+
+        .nav_secound_div {
+            display: flex;
+            margin-top: 20px;
+            padding: 10px 0px;
+        }
+
+        .nav_secound_div>div a {
+            padding: 14px;
+            display: inline-flex;
+            text-align: center;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .nav_secound_div>div a:hover {
+            color: black;
+        }
+
+        .nav_first_div_secound_part {
+            justify-content: space-around;
+            display: flex;
+            width: 16%;
+        }
+        .border{
+            border-right:2px solid #767676;
+            padding-right: 35px;
+            
+        }
+        .border.unsplash\+{
+            animation: vZKGD 3s linear infinite alternate-reverse;
+            animation-play-state: paused;
+            background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 500%;
+            color: rgba(0, 0, 0, 0);
+        }
+        
+
+        /* ------------------------------------------------------------------------------------------------------- */
         .search_div{
-            /* background-image: url('https://images.unsplash.com/photo-1671211359905-36bfec02f1e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60'); */
-            background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('/clark-van-der-beken-s9PEAma2hNc-unsplash.jpg');
+            /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://images.unsplash.com/photo-1671255672894-843cdb23e46a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'); */
+            background-image: url('https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
             background-repeat: no-repeat;
             background-size: cover;
-            /* background-blend-mode: overlay; */
             height: 50rem;
         }
         #search_text{
@@ -23,21 +157,24 @@
         }
         #search_text>h1{
             font-size: 46px;
-            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
         }
         #search_text>p{
             margin: 16px 0;
             font-weight: 500;
             font-size: 23px;
-            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
             line-height: 22px;
         }
-        input[type="text"] {
+        input#searchv {
+            width: 100%;
             border: none;
             color: #111;
             height: 4rem;
             border-radius: 11px;
-            width: 100%;
+            font-size: 25px;
+            padding-left: 30px;
+        }
+        input#searchv:focus{
+            outline: none;
         }
         .search_input {
             margin-top: 35px;
@@ -58,18 +195,25 @@
         .button_c{
             position: absolute;
             top: 10px;
-            left:10px;
-            width: 20px;
-            height: 20px;
+            left: 10px;
+            width: 35px;
+            height: 30px;
+            font-size: 26px;
+            border: none;
+            background: none;
         }
         .download{
-            padding: 10px;
+            padding: 15px;
             color: white;
             text-decoration: none;
             position: absolute;
-            right: 10px;
-            top:10px;
-            background-color: green;
+            right: 25px;
+            top: 10px;
+            background-color: #131413c2;
+            border-radius: 24px;
+            width: 120px;
+            font-size: 18px;
+            text-align: center;
 
         }
         .download_img{
@@ -107,14 +251,77 @@
         }
         .prev_button{
             left: 20px;
+            font-size: 56px;
+            background: none;
+            border: none;
         }
         .next_button{
             right: 20px;
+            font-size: 56px;
+            background: none;
+            border: none;
         }
 
     </style>
+    <script src="https://kit.fontawesome.com/1d73357de3.js" crossorigin="anonymous"> </script>
+
 </head>
 <body>
+    <header>
+        <div class="nav" id="header">
+            <div class="nav_first_div">
+                <div class="nav_first_div_first_part">
+    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z" />
+                    </svg>
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+    
+                        <input type="text" placeholder="Search free high-resolution photos" class="search_header">
+    
+                    </span>
+                    <a href="#">Explore</a>
+                    <a href="#">Advertise</a>
+                    <a href="#" class="border unsplash+" >Unsplash+</a>
+                </div>
+                <div class="nav_first_div_secound_part">
+                    <a href="#">Log in</a>
+                    <a href="#">Sign up</a>
+    
+                </div>
+    
+    
+    
+            </div>
+            <div class="nav_secound_div">
+                <div>
+                    <a href="#" class="border">Editorial</a>
+                </div>
+                <div class="scrollmenu" id="style-2">
+    
+                    <a href="#home">Wallpapers</a>
+                    <a href="#news">3D Renders</a>
+                    <a href="#contact">Travel</a>
+                    <a href="#about">Nature</a>
+                    <a href="#support">Street Photography</a>
+                    <a href="#blog">Experimental</a>
+                    <a href="#tools">Textures & Patterns</a>
+                    <a href="#base">Animals</a>
+                    <a href="#custom">Architecture & Interiors</a>
+                    <a href="#more">Fashion & Beauty</a>
+                    <a href="#logo">Film</a>
+                    <a href="#friends">Food & Drink</a>
+                    <a href="#people">People</a>
+                    <a href="#work">Spirituality</a>
+                    <a href="#work">Business & Work</a>
+                    <a href="#work">Athletics</a>
+                    <a href="#work">Health & Wellness</a>
+                    <a href="#work">Current Events</a>
+                    <a href="#work">Arts & Culture</a>
+                </div>
+            </div>
+        </header>
     <div class="search_div">
 
         <div id="search_text">
@@ -129,7 +336,7 @@
     </div>
     <div class="popup hide" id="popu">
         <button class="button_c">X</button>
-        <a href="#" class="download">Download</a>
+        <a href="#" class="download" download>Download</a>
         <img src="" alt="" class="download_img">
         <button class="control prev_button">&lt;</button>
         <button class="control next_button">&gt;</button>

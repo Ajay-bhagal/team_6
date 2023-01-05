@@ -38,12 +38,14 @@ const display=(data)=>{
     data.map((ele,i)=>{
         let div=document.createElement("div");
         let img= document.createElement("img");
+        
         img.src=ele.urls.regular;
         div.id='card_img'; 
         img.onclick=()=>{
             curr=i;
             popupData(ele);
         }
+        
         div.append(img)
         container.append(div);
     })
@@ -56,7 +58,8 @@ const popupData=(ele)=>{
     let img= document.querySelector('.download_img');
 
     popu.classList.remove('hide');
-    download.href=ele.links.html;
+    
+    download.href=ele.links.download_location;
     img.src=ele.urls.regular;
     crossbtn.addEventListener("click",()=>{
         popu.classList.add('hide');
@@ -66,13 +69,13 @@ const popupData=(ele)=>{
 document.querySelector(".prev_button").addEventListener("click",()=>{
     if(curr>0){
         curr--;
-        popupData(data[curr]);
+        popupData(imgData[curr]);
     }
 });
 document.querySelector(".next_button").addEventListener("click",()=>{
-    if(curr<data.length-1){
+    if(curr<imgData.length-1){
         curr++;
-        popupData(data[curr]);
+        popupData(imgData[curr]);
     }
 });
  
