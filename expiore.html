@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <title>Explore</title>
+    <link rel="icon"
+        href="https://unsplash.com/assets/core/logo-black-ddbdd505b663faadbc1e1731369f0929b2616886cb1d7fe11237c473bba02a50.svg">
+    <Style>
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .logo {
+            height: 32px;
+            width: 32px;
+            padding-left: 15px;
+            cursor: pointer;
+        }
+
+        nav {
+            margin-top: -8px;
+            /* border: 1px solid black; */
+            padding-top: 10px;
+            /* display: flex;
+            justify-content: space-between; */
+            display: grid;
+            grid-template-columns: repeat(11, auto);
+            /* gap: 10px; */
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            padding-bottom: 8px;
+        }
+
+        #src_box {
+            /* display: flex; */
+            /* padding-left: 15px;
+            padding-top: 10px; */
+            padding: 5px 0px 5px 15px;
+            width: 630px;
+            border-radius: 20px;
+            background-color: rgb(238, 238, 238);
+            height: 30px;
+        }
+
+        #src_box:hover {
+            border: 0.05px solid rgb(197, 196, 196);
+        }
+
+        #src {
+            /* margin-left: -5px; */
+            /* padding-left: 15px; */
+            /* padding-bottom: 5px; */
+            /* margin-top: -15px; */
+            width: 80%;
+            /* border-radius: 20px; */
+            padding-left: 5px;
+            border: 0px;
+            background-color: rgb(238, 238, 238);
+            outline: none;
+            /* height: 40px; */
+        }
+
+        #lens {
+            /* border: 1px solid black; */
+            padding-top: 5px;
+            margin-left: 65px;
+            /* padding-bottom: -15px; */
+            margin-bottom: -5px;
+            cursor: pointer;
+        }
+
+        .nav_a {
+            text-align: center;
+            text-decoration: none;
+            color: gray;
+            padding-top: 10px;
+        }
+
+        #subs {
+            color: rgb(124, 160, 255);
+        }
+
+        #subs:hover {
+            color: blueviolet;
+        }
+
+        #line {
+            border: 0.01px solid rgb(182, 178, 178);
+            width: 0px;
+            margin-top: 5px;
+            margin-left: 10px;
+            height: 30px;
+        }
+
+        #submit_photo {
+            height: 30px;
+            width: 130px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            border: 0.1px solid gray;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-left: 10px;
+            color: gray;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        #submit_photo:hover {
+            border: 0.1px solid black;
+            color: black;
+        }
+
+        #src_icon {
+            cursor: pointer;
+        }
+
+        /* nav design end */
+
+        h1 {
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        #head_para {
+            font-size: 18px;
+            font-weight: 400;
+            width: 48%;
+        }
+
+        #head_para a {
+            font-size: 18px;
+            font-weight: 400;
+            color: gray;
+        }
+
+        #head_para a:hover {
+            color: black;
+        }
+
+        #contener {
+            padding-left: 10px;
+            padding-top: 100px;
+        }
+
+        #browse {
+            padding-top: 25px;
+
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        #card_div {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 10px;
+        }
+
+        .card_img {
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .card_btn {
+            height: 25px;
+            padding: 3px;
+            border: none;
+            border-radius: 2px;
+            color: gray;
+            background-color: rgb(238, 238, 238);
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .card_btn:hover {
+            color: black;
+        }
+
+        #image_contenet {
+            margin-top: 40px;
+        }
+
+        #gallery {
+            width: 98%;
+            columns: 3;
+            padding-right: 15px;
+            column-gap: 20px;
+        }
+
+        .glry_img {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            cursor: zoom-in;
+        }
+
+        /* .glry_img:hover{
+            opacity: 0.9;
+        } */
+
+        #img_popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80vh;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        #close_btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #lrg_img {
+            height: 80%;
+            width: auto;
+            max-width: 80%;
+            object-fit: cover;
+        }
+
+        .controls {
+            background: none;
+            border: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        #pre_btn {
+            left: 20px;
+        }
+
+        #nxt_btn {
+            right: 20px;
+        }
+
+        #dnld_btn{
+            text-transform: capitalize;
+            padding: 10px 20px;
+            background-color: rgb(60,180,110);
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            text-decoration: none;
+            top: 10px;
+            right: 10px;
+        }
+
+        .hide {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </Style>
+    <script src="https://kit.fontawesome.com/60f60c7e47.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <img id="home" class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppwmNe1stw5okMfJakEEh6uQOwaRuhp0O72KNm_E&s"
+            alt="logo">
+        <div id="src_box"> <span id="src_icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input id="src" type="text" placeholder='Search free high-resolution photos'>
+            <img id="lens" src="lens.PNG" alt="lens">
+        </div>
+
+        <a class="nav_a" href="">Explore</a>
+        <a class="nav_a" href="">Advertise</a>
+        <a class="nav_a" id="subs" href="">Unsplash+</a>
+        <div id="line"></div>
+        <a class="nav_a" href="">Log in</a>
+        <a class="nav_a">/</a>
+        <a class="nav_a" href="">Sign up</a>
+        <button id="submit_photo">Submit a photo</button>
+        <img class="logo"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEX///8AAADPz8+WlpZLS0v7+/vu7u5vb29TU1PDw8Pz8/N8fHyCgoITExMzMzOsrKyPj4+6urrU1NTo6Oizs7NCQkJkZGQoKCilpaUtLS05OTmenp7IyMiFhYVaWlpqamoLCwt+baPtAAACfUlEQVR4nO3di27CMAyF4TBWoAxYx2UX2Abv/5RbpSE2aXLSJpJl5/+ewEdQSlLXCQEAAAAAAAAAAAAAAAAA/Fu2H5/3dnyu2uWgfLv5xJ75Ljlf02kXO1LXpAWcHbQrHe0wSwm4XGvXmWGdcDU2G+0qs2ziX9SVdo2ZVrGAW+0Ks20jCZ+1C8z2LAecaddXgPx7+qhdXgGPYsKzdnkFnMWEL9rlFfAiJrxol1eCmFC7uCLEhJb/sV2txYT32uUVcBATWl03/daJCd+1yyvgXUzo4Mf0IgcMr9oFZnuNJGzetCvM9BZdIFq/EiNXof3v6SkeMISpdpUZpikBQ3jSrnO0p7SA3+tgixvCk8k8aS/xx2561K53oGOXvuV9Dbm9s2M7OB4AAAAAAAAAALBj2Z6mdpwGvm4Rmv1C+1nSYIt94rsIvdZmN/umTQ34oF3qaA9pAe19QW8WKQFtPuG+mscDWu/0lru8g4dm/Vi7gvVXZqIvzTTa9RUg3xbtNgvdyG1Ddm+FN/JN0Vqf0H82YkL7LcKxJmHt6oqo/DO0uaj46ygm9P9b6v9+6P8/jf//pRWsLfyvDytY41ewT2P5ppi411bBfmkFe949588tAAAAAAAAAACAJc7nRO06aw/Yhs36mtkcen1Onte21y51tMSZe+7nJp60q8ySMPvS/fzSxvrc+egMWtvzWXuxOcLa9RXg+yrsyVei/5nsdg+zupHn6vs/G0G7uiIqT2j9ft+Tz5mxuWz6Sz4ryHqXd0/u9Lbfqh9t1nd/7loFZ+eZf2kmev5hBWdY+j+HtIKzZCs4Dzj4P9O5Z+1c7g9euAAAAAAAAAAAAAAAAABQhS+ZyFZoP93BCgAAAABJRU5ErkJggg=="
+            alt="menu">
+    </nav>
+    <!-- nav end -->
+    <div id="contener">
+
+        <!-- popup div -->
+        <div id="img_popup" class="hide">
+            <button id="close_btn"><i class="fa-solid fa-xmark"></i></button>
+            <a href="" id="dnld_btn" download>Download</a>
+            <img id="lrg_img" alt="">
+            <button id="pre_btn" class="controls"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="nxt_btn" class="controls"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <!-- popupdiv end -->
+
+        <h1>Explore Unsplash photos</h1>
+        <p id="head_para">Unsplash has over a million free high-resolution photos. Explore these popular photo
+            categories on Unsplash.
+            All photos here are free to download and use under the <a href="">Unsplash License</a> .</p>
+        <div id="browse">
+            <h2>Browse thousands of free images on Unsplash</h2>
+            <div id="card_div">
+                <div class="card">
+                    <img class="card_img" src="background.PNG" alt="">
+                    <p>Download free desktop and mobile backgrounds.</p>
+                    <button class="card_btn">Cool Backgrounds</button>
+                    <button class="card_btn">Desktop Backgrounds</button>
+                </div>
+                <div class="card">
+                    <img class="card_img" src="Images.PNG" alt="">
+                    <p>Download amazing photos and pictures for free.</p>
+                    <button class="card_btn">Free Stock Photos</button>
+                    <button class="card_btn">Nature Images</button>
+                </div>
+                <div class="card">
+                    <img class="card_img" src="Wallpapers.PNG" alt="">
+                    <p>Discover your next desktop or mobile wallpaper.</p>
+                    <button class="card_btn">IPhone Wallpapers</button>
+                    <button class="card_btn">Cool Wallpapers</button>
+                </div>
+            </div>
+        </div>
+        <div id="image_contenet">
+            <h2>Free high-resolution Unsplash photos</h2>
+            <section id="gallery">
+
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // let apiKey = "O_vuLtUnUxJQYRdzAjsrdTA5I8mWRCq6u3DMWIY_wdM";
+    let apiKey_copy = "gDRd9seOjtxY_UTMNIgrceb6Ge_KgUpQ1hkUsU75RJc"
+    let searchval = "";
+    let randomurl = `https://api.unsplash.com/photos/random?client_id=${apiKey_copy}&count=32`;
+    let search_url = `https://api.unsplash.com/search/photos?client_id=${apiKey_copy}&query=${searchval}&per_page=30`
+    var ind = -1;
+    const showData = async (url) => {
+        var img_arr = [];
+        let data = await fetch(url);
+        let jsondata = await data.json();
+        document.getElementById("gallery").innerHTML = "";
+        jsondata.map((ele, index) => {
+            img_arr.push(ele.urls.regular);
+            let gallery = document.getElementById("gallery");
+            let img = document.createElement("img");
+            img.setAttribute("class", "glry_img");
+            img.setAttribute("src", ele.urls.regular);
+
+            img.addEventListener("click", () => {
+                ind = index;
+                document.getElementById("lrg_img").setAttribute("src", ele.urls.regular);
+                document.getElementById("dnld_btn").setAttribute("download", ele.urls.regular);
+                document.getElementById("img_popup").removeAttribute("class");
+
+                document.getElementById("close_btn").addEventListener("click", () => {
+                    ind = -1;
+                    document.getElementById("img_popup").setAttribute("class", "hide");
+                })
+            })
+
+            gallery.append(img);
+        })
+        return img_arr;
+    }
+
+    document.getElementById("home").addEventListener("click", ()=>{
+        window.location.href = "index.html";
+    })
+
+    document.getElementById("src_box").addEventListener("click", ()=>{
+        searchval = document.getElementById("src");
+        // document.getElementById("gallery").innerHTML = "";
+        img_data = showData(randomurl);
+    })
+
+    document.getElementById("nxt_btn").addEventListener("click", () => {
+        if (ind < 30) {
+            popup_right();
+        }
+    })
+    document.getElementById("pre_btn").addEventListener("click", () => {
+        if (ind > 0) {
+            popup_left();
+        }
+    })
+
+    var img_data = showData(randomurl);
+
+    const popup_right = async () => {
+        ind++;
+        let data = await img_data;
+        document.getElementById("lrg_img").setAttribute("src", data[ind]);
+    }
+    const popup_left = async () => {
+        ind--;
+        let data = await img_data;
+        document.getElementById("lrg_img").setAttribute("src", data[ind]);
+    }
+
+</script>
