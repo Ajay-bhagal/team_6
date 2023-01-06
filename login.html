@@ -118,22 +118,34 @@
             width: 100%;
             line-height: 40px;
         }
+
+        #logo {
+
+            width: 30%;
+        }
+
+        @media only screen and (min-width:0px)and (max-width:750px) {
+            #login {
+                margin: 0% 25%;
+                padding: 0% 10%;
+                line-height: 24px;
+            }
+
+        }
     </style>
 </head>
 
 <body>
     <div id="login">
         <div id="head">
-            <img
-                src="https://unsplash.com/assets/core/logo-black-ddbdd505b663faadbc1e1731369f0929b2616886cb1d7fe11237c473bba02a50.svg">
+            <img id="logo" src="logom.jpeg" alt="logo">
+
             <h1>Login</h1>
             <p>Welcome back.</p>
         </div>
         <button class="fb"
             onclick="window.location.href= 'https://www.facebook.com/login.php?skip_api_login=1&api_key=779900868722692&kid_directed_site=0&app_id=779900868722692&signed_next=1&next=https://www.facebook.com/v5.0/dialog/oauth%253Fclient_id=779900868722692&redirect_uri=https%253A%252F%252Funsplash.com%252Fusers%252Fauth%252Ffacebook%252Fcallback&response_type=code&scope=email&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1&ret=login&fbapp_pres=0&logger_id=7815c244-55ae-4907-a62f-81c415e46ce4&tp=unspecified&cancel_url=https://unsplash.com/users/auth/facebook/callback%253Ferror=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1%2523_=_&display=page&locale=en_GB&pl_dbl=0';">
-            <!-- <img
-                id="pic1"
-                src="https://www.bing.com/th?id=OIP.tozpIBHbVCdArjene99JiAD5D6&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> -->
+            
             Login using facebook </button>
         <br>
         <p id="p">OR</p>
@@ -163,7 +175,6 @@
 
     var flag = 0
     function Login() {
-           var info = JSON.parse(localStorage.getItem("user-info")) || [];
         var AccountDetails = JSON.parse(localStorage.getItem("account-data")) || [];
         // event.preventDefault();
 
@@ -172,18 +183,19 @@
         var enterpass = document.getElementById("entpassword").value;
 
         AccountDetails.map(function (elem) {
-            if (elem.email === enterEmail && elem.password === enterpass) {
 
+            if (elem.email === enterEmail && elem.password === enterpass) {
 
                 alert("Login Successful");
                 flag++;
-                window.location.href = "index.html";
+
+                var user = elem.username;
                 let obj = {
                     email: enterEmail,
-                    
+                    user: user
                 }
-                info.push(obj);
-                localStorage.setItem("user-info", JSON.stringify(info));
+                localStorage.setItem("user-info", JSON.stringify(obj));
+                window.location.href = "index.html";
             }
 
         });
