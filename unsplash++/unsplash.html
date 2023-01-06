@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unsplash+</title>
+    <style>
+      * {
+        font-family: -apple-system, BlinkMacSystemFont, San Francisco,
+          Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
+          sans-serif;
+      }
+      #container {
+        width: 85%;
+        margin: auto;
+      }
+      #top1 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #right {
+        width: 55%;
+      }
+      #left {
+        margin-top: 100px;
+        width: 45%;
+      }
+      #right > img {
+        width: 100%;
+      }
+      #top1 > #left > #top {
+        font-weight: 700;
+        font-size: x-large;
+      }
+      #button {
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        padding: 10px 30px;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      #button > a {
+        text-decoration: none;
+        color: white;
+      }
+      #left > p > span {
+        background: linear-gradient(
+          to left,
+          rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%,
+          rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: xx-large;
+        line-height: 2px;
+      }
+      #top2head > h1 {
+        margin-top: 60px;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 40px;
+      }
+      #top2head > h1 > span {
+        background: linear-gradient(
+          to left,
+          rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%,
+          rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      #top2 {
+        display: flex;
+        background-color: black;
+        color: white;
+        border-radius: 13px;
+        margin-bottom: -5px;
+        margin-bottom: 30px;
+      }
+      #top2 > #left,
+      #right {
+        width: 50%;
+      }
+      #top2 > #right > img {
+        width: 100%;
+      }
+      #top2 > #left > #inner {
+        width: 400px;
+        padding-top: 40px;
+        margin: auto;
+        font-size: large;
+      }
+      #top2 > #left > #inner > p {
+        color: #d1d1d1;
+        line-height: 30px;
+      }
+      #top3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        gap: 25px;
+      }
+      #top3 > #left {
+        background-color: rgb(17, 17, 17);
+        margin-top: -0px;
+        width: 50%;
+        border-radius: 13px;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #top3 > #right {
+        border-radius: 13px;
+        background-color: rgb(17, 17, 17);
+        width: 50%;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #top3 > #left > #img > img {
+        width: 100%;
+        border-radius: 0px 0px 13px 13px;
+      }
+      #top3 > #right > #img > img {
+        width: 100%;
+        border-radius: 0px 0px 13px 13px;
+      }
+      #top3 > #left > #pera {
+        width: 430px;
+        padding-top: 40px;
+        margin: auto;
+        font-size: large;
+        margin-top: -0px;
+      }
+      #top3 > #left > #pera > p {
+        color: #d1d1d1;
+        line-height: 30px;
+      }
+      #top3 > #right > #pera {
+        width: 430px;
+        padding-top: 40px;
+        margin: auto;
+        font-size: large;
+      }
+      #top3 > #right > #pera > p {
+        color: #d1d1d1;
+        line-height: 30px;
+      }
+      #top3span {
+        color: white;
+        text-decoration-line: underline;
+        text-decoration-color: white;
+        font-weight: 200;
+      }
+      #top4head > h1 {
+        margin-top: 100px;
+        /* margin-bottom: 100px; */
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 40px;
+      }
+      #top4head > h1 > span {
+        background: linear-gradient(
+          to left,
+          rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%,
+          rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      #top4head > p {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      #top4 {
+        margin-left: -10%;
+        width: 118%;
+        position: relative;
+        /* text-align: center; */
+      }
+      #top4 > img {
+        width: 100%;
+      }
+      #top4lines > p > span {
+        background: linear-gradient(
+          to left,
+          rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%,
+          rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: xx-large;
+        line-height: 2px;
+      }
+      #top4 > #top4lines {
+        margin-top: -630px;
+        position: absolute;
+        margin-left: 36%;
+      }
+      #top4bottom {
+        margin-top: 10px;
+        display: flex;
+        margin-left: 50px;
+        gap: 80px;
+        color: #5a5a5a;
+        font-size: small;
+      }
+      #top4button {
+        background-color: black;
+        border-radius: 4px;
+        padding: 10px 150px;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      #top4button > a {
+        text-decoration: none;
+        color: white;
+      }
+      #top4headbutton {
+        background: linear-gradient(
+          to left,
+          rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%,
+          rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        color: white;
+        border-radius: 15px;
+        border-style: none;
+        padding: 6px;
+      }
+      #plan {
+        margin-top: 10px;
+        display: flex;
+        margin-bottom: -25px;
+      }
+      #rate {
+        margin-top: -40px;
+        font-size: 50px;
+        font-weight: 700;
+      }
+      #ratetext {
+        margin-top: 10px;
+        line-height: 5px;
+        font-weight: 700;
+      }
+      #top5 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #top5 > #right {
+        margin-top: 120px;
+        font-size: 20px;
+        line-height: 10px;
+        cursor: pointer;
+      }
+      #n1,
+      #n2,
+      #n3,
+      #n4,
+      #n5,
+      #n6 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #top5 > #left > h1 {
+        font-size: 40px;
+      }
+      #top5 > #left > p {
+        font-size: 18px;
+      }
+      #top6head {
+        display: flex;
+        margin-top: 100px;
+        font-size: small;
+        margin-bottom: 100px;
+      }
+      #top6 > #left {
+        margin-left: -35px;
+        margin-top: -10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #top6 > #left > ul > li {
+        list-style: none;
+        line-height: 40px;
+      }
+      #top6 > #left > ul > li > a {
+        text-decoration: none;
+        color: #787878;
+      }
+      #top6 > #right {
+        margin-top: 50px;
+        /* margin-right: -600px; */
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      #top6 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #top6 > #right > img {
+        width: 25px;
+        height: 25px;
+        margin-left: 15px;
+      }
+      #bottom > #left > img {
+        width: 40px;
+        height: 40px;
+      }
+      #bottom {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      #bottom > #left {
+        display: flex;
+        gap: 1em;
+        margin-top: -0px;
+      }
+      #bottom > #right {
+        margin-left: 600px;
+        /* margin-right: -350px; */
+        gap: 1em;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      #bottom > #right > a {
+        text-decoration: none;
+        color: black;
+      }
+      #n1append,
+      #n2append,
+      #n3append,
+      #n4append,
+      #n5append,
+      #n6append > p {
+        font-size: small;
+        line-height: 20px;
+      }
+      #ratebutton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 60px;
+        position: relative;
+        background-color: #eeeded;
+        height: 50px;
+        width: 255px;
+        border-radius: 20px 20px 20px 20px;
+        margin: auto;
+      }
+      #ratebutton > button {
+        height: 40px;
+        padding: 13px 20px;
+        border: none;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        background: transparent;
+      }
+      #ratebutton > .bt {
+        border-radius: 20px 20px 20px 20px;
+        color: #787878;
+      }
+      #ratebutton > #month {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="top1">
+        <div id="left">
+          <div id="top">
+            <h1>
+              Upgarde to
+              <span
+                style="
+                  background: linear-gradient(
+                    to left,
+                    rgba(0, 224, 255, 1) 0%,
+                    rgba(250, 0, 255, 1) 33%,
+                    rgba(0, 224, 255, 1) 66%,
+                    rgba(250, 0, 255, 1) 100%
+                  );
+                  background-repeat: repeat-x;
+                  background-size: 400%;
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >Unsplash+</span
+              >
+              and start creating with exclusive, royalty-free images.
+            </h1>
+          </div>
+          <p><span>+ &nbsp&nbsp</span>Members-only content added monthly</p>
+          <p><span>+ &nbsp&nbsp</span>Unlimited royality-free downloads</p>
+          <p><span>+ &nbsp&nbsp</span>Enhanced legal protections</p>
+
+          <button id="button">
+            <a href="#">Get Unsplash+ for $4/month*</a>
+          </button>
+          <p style="font-size: 13px; color: dimgray">
+            *when paid annually, limited
+            <span
+              style="
+                background: linear-gradient(
+                  to left,
+                  rgba(0, 224, 255, 1) 0%,
+                  rgba(250, 0, 255, 1) 33%,
+                  rgba(0, 224, 255, 1) 66%,
+                  rgba(250, 0, 255, 1) 100%
+                );
+                background-repeat: repeat-x;
+                background-size: 400%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                font-size: 13px;
+              "
+              >66%</span
+            >
+            off special<sup>1</sup>
+          </p>
+        </div>
+        <div id="right">
+          <img src="./Upgrade to Unsplash+ 1st right copy.png" alt="" />
+        </div>
+      </div>
+      <div id="top2head">
+        <h1>Why go Unsplash<span>+</span></h1>
+      </div>
+
+      <div id="top2">
+        <div id="left">
+          <div id="inner">
+            <h2>Additional images</h2>
+            <p>
+              Create with images only Unsplash+ subscribers have access to. New
+              images added every month.
+            </p>
+          </div>
+        </div>
+        <div id="right">
+          <img src="./Upgrade to Unsplash+ top2.png" alt="" />
+        </div>
+      </div>
+      <div id="top3">
+        <div id="left">
+          <div id="pera">
+            <h2>Unlimited royalty-free downloads</h2>
+            <p>
+              No download limits. Use as many images as many times as you want.
+            </p>
+          </div>
+          <div id="img">
+            <img src="./top3 left.png" alt="" />
+          </div>
+        </div>
+        <div id="right">
+          <div id="pera">
+            <h2>Enhanced legal protections</h2>
+            <p>
+              All Unsplash+ images are
+              <span id="top3span2">model and property released</span> for use in
+              any commercial project and are backed by
+              <a href="#"><span id="top3span">Unsplash+ Protection.</span></a>
+            </p>
+          </div>
+          <div id="img">
+            <img src="./top3 right.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div id="top4head">
+        <h1>Unsplash<span>+&nbsp</span> Pricing</h1>
+        <p>No bundles. No add-ons. One simple plan unlocks everything.</p>
+      </div>
+      <div id="ratebutton">
+        <button id="month" class="bt" onclick="monthrate()">Monthly</button>
+        <button id="year" class="bt" onclick="yearrate()">
+          Yearly (66% off)
+        </button>
+      </div>
+      <div id="top4">
+        <img src="./top4.png" alt="" />
+        <div id="top4lines">
+          <button id="top4headbutton">
+            Limited Launch Special<sup>1</sup>
+          </button>
+          <div id="plan">
+            <div id="rate">
+              <p id="ratechange">
+                <span style="color: #d1d1d1"><s>$12</s></span
+                >&nbsp$<a id="changerate">8</a>&nbsp
+              </p>
+            </div>
+            <div id="ratetext">
+              <p>USD/mo</p>
+              <p id="changemonth">billed monthly</p>
+            </div>
+          </div>
+          <p><span>+ &nbsp</span>Members-only content added monthly</p>
+          <p><span>+ &nbsp</span>Unlimited royality-free downloads</p>
+          <p><span>+ &nbsp</span>Enhanced legal protections</p>
+          <p><span>+ &nbsp</span>Ad-free experience</p>
+          <p><span>+ &nbsp</span>Priority support</p>
+          <button id="top4button"><a href="#">Get Unsplash+</a></button>
+          <div id="top4bottom">
+            <p>✓ Renews automatically</p>
+            <p>✓ Cancel anytime</p>
+          </div>
+        </div>
+      </div>
+      <div id="top5">
+        <div id="left">
+          <h1>Frequently asked questions</h1>
+          <p>
+            Haven’t found what you’re looking for?<br />
+            Try our <a href="#" style="color: #a9a9a9">Help-Center</a> — we’re
+            here to help
+          </p>
+        </div>
+        <div id="right">
+          <div id="n1" onclick="get1()">
+            <p style="font-weight: 550">What is Unsplash+?</p>
+            <p>﹀</p>
+          </div>
+          <div id="n1append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+          <div id="n2" onclick="get2()">
+            <p style="font-weight: 550">
+              How do I sign up for a Unsplash+ subscription?
+            </p>
+            <p>﹀</p>
+          </div>
+          <div id="n2append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+          <div id="n3" onclick="get3()">
+            <p style="font-weight: 550">
+              Can I pause, deactivate or reactivate my subscription?
+            </p>
+            <p>﹀</p>
+          </div>
+          <div id="n3append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+          <div id="n4" onclick="get4()">
+            <p style="font-weight: 550">
+              How can I use the images? Are there any restrictions?
+            </p>
+            <p>﹀</p>
+          </div>
+          <div id="n4append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+          <div id="n5" onclick="get5()">
+            <p style="font-weight: 550">
+              Will I be charged in my local currency?
+            </p>
+            <p>﹀</p>
+          </div>
+          <div id="n5append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+          <div id="n6" onclick="get6()">
+            <p style="font-weight: 550">
+              Can I share my subscription with someone else?
+            </p>
+            <p>﹀</p>
+          </div>
+          <div id="n6append"></div>
+          <p style="color: #d1d1d1">
+            _________________________________________________________
+          </p>
+        </div>
+      </div>
+      <div id="top6head">
+        <p style="color: #a9a9a9">1.</p>
+        <p style="color: #a9a9a9">
+          Limited Launch Special pricing is subject to change without notice;
+          subsequent renewal fees at promotional pricing are<br />not
+          guaranteed. Adjusted pricing will only apply to subsequent renewal
+          periods. Individual Rates will not increase<br />during an active
+          subscription billing period.'
+        </p>
+      </div>
+      <h1>Unsplash</h1>
+      <div id="top6">
+        <div id="left">
+          <ul id="list1">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Join the team</a></li>
+          </ul>
+          <ul id="list2">
+            <li><a href="#">Developers/APl</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+          <ul id="list3">
+            <li><a href="#">Unsplash Awards</a></li>
+            <li><a href="#">Unsplash for Education</a></li>
+            <li><a href="#">Unsplash for iOS</a></li>
+            <li><a href="#">Apps & Plugins</a></li>
+          </ul>
+        </div>
+        <div id="right">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/3661/3661391.png"
+            alt=""
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png"
+            alt=""
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/733/733635.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <p style="color: #a3a3a3">
+        _________________________________________________________________________________________________________________________________________________
+      </p>
+      <div id="bottom">
+        <div id="left">
+          <img
+            src="https://webusupload.apowersoft.info/lightpdf/wp-content/uploads/2020/02/unsplash-logo-20200225.jpg.webp"
+            alt=""
+          />
+          <p>Make something awesome, Mohan</p>
+        </div>
+        <div id="right">
+          <a href="#">Security</a><a href="#">Terms</a
+          ><a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function monthrate() {
+      let bt = document.getElementById("month");
+      bt.style.backgroundColor = "white";
+      bt.style.color = "black";
+      let bt2 = document.getElementById("year");
+      bt2.style.backgroundColor = "transparent";
+      bt2.style.color = "#787878";
+
+      let chang = document.getElementById("changerate");
+      chang.innerHTML = "8";
+      let changm = document.getElementById("changemonth");
+      changm.innerHTML = "billed monthly";
+    }
+    function yearrate() {
+      let bt = document.getElementById("year");
+      bt.style.backgroundColor = "white";
+      bt.style.color = "black";
+      let bt2 = document.getElementById("month");
+      bt2.style.backgroundColor = "transparent";
+      bt2.style.color = "#787878";
+
+      let chang = document.getElementById("changerate");
+      chang.innerHTML = "4";
+      let changm = document.getElementById("changemonth");
+      changm.innerHTML = "billed Yearly";
+    }
+    let ct = 0;
+    function get1() {
+      if (ct % 2 == 0) {
+        document.getElementById("n1append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "Unsplash+ is a subscription-based content provider that gives you access to additional beautiful images, with no download cap. Plus members get access to unique images, royalty-free usage, and expanded legal protections.";
+
+        document.getElementById("n1append").append(p);
+      } else {
+        document.getElementById("n1append").innerHTML = "";
+      }
+      ct++;
+    }
+    function get2() {
+      if (ct % 2 == 0) {
+        document.getElementById("n2append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "Signing up for a subscription is simple. Click on the 'Get Unsplash+' button on this page!";
+
+        document.getElementById("n2append").append(p);
+      } else {
+        document.getElementById("n2append").innerHTML = "";
+      }
+      ct++;
+    }
+    function get3() {
+      if (ct % 2 == 0) {
+        document.getElementById("n3append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "You have the freedom to change your plan or cancel your next subscription renewal online at any time. This can be done by going to your Account Settings and clicking 'Manage my subscription'.";
+
+        document.getElementById("n3append").append(p);
+      } else {
+        document.getElementById("n3append").innerHTML = "";
+      }
+      ct++;
+    }
+    function get4() {
+      if (ct % 2 == 0) {
+        document.getElementById("n4append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "All Unsplash+ images are model and property released and are backed by Unsplash+ Protection.";
+
+        document.getElementById("n4append").append(p);
+      } else {
+        document.getElementById("n4append").innerHTML = "";
+      }
+      ct++;
+    }
+    function get5() {
+      if (ct % 2 == 0) {
+        document.getElementById("n5append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "If you’re based in the US, CA, UK or EU, yes. For all other regions, you will be charged in either EUR or USD.";
+
+        document.getElementById("n5append").append(p);
+      } else {
+        document.getElementById("n5append").innerHTML = "";
+      }
+      ct++;
+    }
+    function get6() {
+      if (ct % 2 == 0) {
+        document.getElementById("n6append").innerHTML = "";
+        let p = document.createElement("p");
+        p.innerHTML =
+          "No, the subscription is for a single-user license only. Only the owner of the account has the right to use the image. A company can have an account, but it is still a single seat-license, meaning only 1 person can download and select content/use the content at a time, and it cannot be stored on a DAM for broad sharing rights.";
+        document.getElementById("n6append").append(p);
+      } else {
+        document.getElementById("n6append").innerHTML = "";
+      }
+      ct++;
+    }
+  </script>
+</html>
