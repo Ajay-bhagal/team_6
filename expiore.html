@@ -285,6 +285,30 @@
             top: 10px;
             right: 10px;
         }
+        #menu_div {
+            text-align: center;
+            position: fixed;
+            top: 58px;
+            right: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+
+        #user_popup {
+            text-align: center;
+            position: fixed;
+            background-color: white;
+            color: black;
+            width: 120px;
+            height: 60px;
+            top: 58px;
+            right: 235px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+
+        .nav_pop_user {
+            text-decoration: none;
+            color: gray;
+        }
 
         .hide {
             display: none;
@@ -298,7 +322,7 @@
 <body>
     <!-- nav after login -->
 
-    <nav id="after_login" class="hide">
+    <nav id="after_login">
         <img class="logo"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppwmNe1stw5okMfJakEEh6uQOwaRuhp0O72KNm_E&s"
             alt="logo">
@@ -315,14 +339,14 @@
         <a id="user" class="nav_a2"><i class="fa-regular fa-user"></i></a>
         <a class="nav_a2"><span id="user_name">Ayan</span></a>
         <button id="submit_photo">Submit a photo</button>
-        <img class="logo"
+        <img id="menu_logo" class="logo"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEX///8AAADPz8+WlpZLS0v7+/vu7u5vb29TU1PDw8Pz8/N8fHyCgoITExMzMzOsrKyPj4+6urrU1NTo6Oizs7NCQkJkZGQoKCilpaUtLS05OTmenp7IyMiFhYVaWlpqamoLCwt+baPtAAACfUlEQVR4nO3di27CMAyF4TBWoAxYx2UX2Abv/5RbpSE2aXLSJpJl5/+ewEdQSlLXCQEAAAAAAAAAAAAAAAAA/Fu2H5/3dnyu2uWgfLv5xJ75Ljlf02kXO1LXpAWcHbQrHe0wSwm4XGvXmWGdcDU2G+0qs2ziX9SVdo2ZVrGAW+0Ks20jCZ+1C8z2LAecaddXgPx7+qhdXgGPYsKzdnkFnMWEL9rlFfAiJrxol1eCmFC7uCLEhJb/sV2txYT32uUVcBATWl03/daJCd+1yyvgXUzo4Mf0IgcMr9oFZnuNJGzetCvM9BZdIFq/EiNXof3v6SkeMISpdpUZpikBQ3jSrnO0p7SA3+tgixvCk8k8aS/xx2561K53oGOXvuV9Dbm9s2M7OB4AAAAAAAAAALBj2Z6mdpwGvm4Rmv1C+1nSYIt94rsIvdZmN/umTQ34oF3qaA9pAe19QW8WKQFtPuG+mscDWu/0lru8g4dm/Vi7gvVXZqIvzTTa9RUg3xbtNgvdyG1Ddm+FN/JN0Vqf0H82YkL7LcKxJmHt6oqo/DO0uaj46ygm9P9b6v9+6P8/jf//pRWsLfyvDytY41ewT2P5ppi411bBfmkFe949588tAAAAAAAAAACAJc7nRO06aw/Yhs36mtkcen1Onte21y51tMSZe+7nJp60q8ySMPvS/fzSxvrc+egMWtvzWXuxOcLa9RXg+yrsyVei/5nsdg+zupHn6vs/G0G7uiIqT2j9ft+Tz5mxuWz6Sz4ryHqXd0/u9Lbfqh9t1nd/7loFZ+eZf2kmev5hBWdY+j+HtIKzZCs4Dzj4P9O5Z+1c7g9euAAAAAAAAAAAAAAAAABQhS+ZyFZoP93BCgAAAABJRU5ErkJggg=="
             alt="menu">
     </nav>
 
     <!-- nav before login -->
 
-    <nav id="before_login">
+    <nav id="before_login" class="hide">
         <img id="home" class="logo"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppwmNe1stw5okMfJakEEh6uQOwaRuhp0O72KNm_E&s"
             alt="logo">
@@ -339,12 +363,23 @@
         <a class="nav_a">/</a>
         <a class="nav_a" href="">Sign up</a>
         <button id="submit_photo">Submit a photo</button>
-        <img class="logo"
+        <img id="menu_logo2" class="logo"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEX///8AAADPz8+WlpZLS0v7+/vu7u5vb29TU1PDw8Pz8/N8fHyCgoITExMzMzOsrKyPj4+6urrU1NTo6Oizs7NCQkJkZGQoKCilpaUtLS05OTmenp7IyMiFhYVaWlpqamoLCwt+baPtAAACfUlEQVR4nO3di27CMAyF4TBWoAxYx2UX2Abv/5RbpSE2aXLSJpJl5/+ewEdQSlLXCQEAAAAAAAAAAAAAAAAA/Fu2H5/3dnyu2uWgfLv5xJ75Ljlf02kXO1LXpAWcHbQrHe0wSwm4XGvXmWGdcDU2G+0qs2ziX9SVdo2ZVrGAW+0Ks20jCZ+1C8z2LAecaddXgPx7+qhdXgGPYsKzdnkFnMWEL9rlFfAiJrxol1eCmFC7uCLEhJb/sV2txYT32uUVcBATWl03/daJCd+1yyvgXUzo4Mf0IgcMr9oFZnuNJGzetCvM9BZdIFq/EiNXof3v6SkeMISpdpUZpikBQ3jSrnO0p7SA3+tgixvCk8k8aS/xx2561K53oGOXvuV9Dbm9s2M7OB4AAAAAAAAAALBj2Z6mdpwGvm4Rmv1C+1nSYIt94rsIvdZmN/umTQ34oF3qaA9pAe19QW8WKQFtPuG+mscDWu/0lru8g4dm/Vi7gvVXZqIvzTTa9RUg3xbtNgvdyG1Ddm+FN/JN0Vqf0H82YkL7LcKxJmHt6oqo/DO0uaj46ygm9P9b6v9+6P8/jf//pRWsLfyvDytY41ewT2P5ppi411bBfmkFe949588tAAAAAAAAAACAJc7nRO06aw/Yhs36mtkcen1Onte21y51tMSZe+7nJp60q8ySMPvS/fzSxvrc+egMWtvzWXuxOcLa9RXg+yrsyVei/5nsdg+zupHn6vs/G0G7uiIqT2j9ft+Tz5mxuWz6Sz4ryHqXd0/u9Lbfqh9t1nd/7loFZ+eZf2kmev5hBWdY+j+HtIKzZCs4Dzj4P9O5Z+1c7g9euAAAAAAAAAAAAAAAAABQhS+ZyFZoP93BCgAAAABJRU5ErkJggg=="
             alt="menu">
     </nav>
     <!-- nav end -->
     <div id="contener">
+        <!-- nav popup -->
+
+        <div id="menu_div" class="hide">
+            <img src="menu.PNG" alt="">
+        </div>
+
+        <div id="user_popup" class="hide">
+            <a href="" class="nav_pop_user">View Profile</a>
+            <hr>
+            <a href="" class="nav_pop_user">Log Out</a>
+        </div>
 
         <!-- popup div -->
         <div id="img_popup" class="hide">
@@ -396,10 +431,25 @@
 </html>
 
 <script>
-    // let apiKey = "O_vuLtUnUxJQYRdzAjsrdTA5I8mWRCq6u3DMWIY_wdM";
-    let apiKey_copy = "gDRd9seOjtxY_UTMNIgrceb6Ge_KgUpQ1hkUsU75RJc"
+    // nav functions
+    document.getElementById("user").addEventListener("click", () => {
+        document.getElementById("user_popup").removeAttribute("class");
+    })
+    document.getElementById("menu_logo").addEventListener("click", () => {
+        document.getElementById("menu_div").removeAttribute("class");
+    })
+    document.getElementById("menu_logo2").addEventListener("click", () => {
+        document.getElementById("menu_div").removeAttribute("class");
+    })
+    document.getElementById("menu_div").addEventListener("click", () => {
+        document.getElementById("menu_div").setAttribute("class", "hide");
+    })
+    // nav function end
+
+    let apiKey = "O_vuLtUnUxJQYRdzAjsrdTA5I8mWRCq6u3DMWIY_wdM";
+    let apiKey_copy = "gDRd9seOjtxY_UTMNIgrceb6Ge_KgUpQ1hkUsU75RJc";
     let searchval = "";
-    let randomurl = `https://api.unsplash.com/photos/random?client_id=${apiKey_copy}&count=32`;
+    let randomurl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=32`;
     let search_url = `https://api.unsplash.com/search/photos?client_id=${apiKey_copy}&query=${searchval}&per_page=30`
     var ind = -1;
     const showData = async (url) => {
