@@ -37,8 +37,9 @@
         margin-top: 15px;
         font-size: small;
       }
-      #bt {
-        position: relative;
+      #bt > button > a {
+        text-decoration: none;
+        color: white;
       }
       #bt1,
       #bt2 {
@@ -61,7 +62,7 @@
       <button id="bt1" onclick="color()">Ⓐ performance</button>
       <button id="bt2" onclick="color2()">Ⓑ Brand</button>
       <div id="bt">
-        <button onclick="change()">Submit</button>
+        <button><a href="./advertise6.html">Submit</a></button>
       </div>
     </div>
   </body>
@@ -83,19 +84,6 @@
       let color2 = document.getElementById("bt1");
       color2.style.background = "rgb(239,239,239)";
       color2.style.color = "black";
-    }
-
-    function change() {
-      let change = document.getElementById("name");
-      change.innerHTML = "";
-
-      let h1 = document.createElement("h1");
-      h1.innerHTML = "Thanks!";
-
-      let h2 = document.createElement("h1");
-      h1.innerHTML = "One of our representatives will contact you shortly";
-
-      let bt = document.createElement("button");
     }
   </script>
 </html>
