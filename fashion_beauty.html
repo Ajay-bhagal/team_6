@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsplash</title>
+
+       
+    <style>
+        .search_div{
+            background-image: url('https://images.unsplash.com/photo-1670718089430-d75ba6c1a194?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfFM0TUtMQXNCQjc0fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60');
+            /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcXr_DFGzv9FIFsI7-NSIjG6K-4R1hRZQBAA&usqp=CAU'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-blend-mode: overlay; */
+            height: 50rem;
+        }
+        #search_text{
+            color: white;
+            width: 66.66667%;
+            position: relative;
+            margin: 0 auto;
+            top: 45%;
+        }
+        #search_text>h1{
+            font-size: 46px;
+            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+        }
+        #search_text>p{
+            margin: 16px 0;
+            font-weight: 500;
+            font-size: 23px;
+            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+            line-height: 22px;
+        }
+        input[type="text"] {
+            border: none;
+            color: #111;
+            height: 4rem;
+            border-radius: 11px;
+            width: 100%;
+        }
+        .search_input {
+            margin-top: 35px;
+        }
+        .popup{
+            display: flex;
+            justify-content: center;
+            background: ghostwhite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 80%;
+            height: 88vh;
+            border-radius: 10px;
+            transition: .7s;
+        }
+        .button_c{
+            position: absolute;
+            top: 10px;
+            left:10px;
+            width: 20px;
+            height: 20px;
+        }
+        .download{
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            position: absolute;
+            right: 10px;
+            top:10px;
+            background-color: green;
+
+        }
+        .download_img{
+            height: 90%;
+            width: auto;
+            max-width: 80%;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+        .hide{
+            display: none;
+        }
+        #content{
+            columns: 3;
+            margin-top: 20px;
+            gap: 20px;
+            
+        }
+        #card_img{
+            width: 100%;
+            margin: 20px 0px;
+            gap: 20px;
+            height: 100%;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        #card_img>img {
+            width: 100%;
+        } 
+        .control{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .prev_button{
+            left: 20px;
+        }
+        .next_button{
+            right: 20px;
+        }
+
+        .button {
+        background-color: white; /* Green */
+        border: none;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .button3 {
+            
+        padding: 24px 40px;
+        font-size: 20px;
+        border-radius: 41px;
+        text-transform: capitalize;
+        }
+        .button.button3:hover {
+        background: black;
+        color: white;
+        }
+
+
+*{
+            margin: 0px;
+            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+
+        }
+        div#header {
+            padding-top:10px;
+            padding-left: 20px;
+            position: sticky;
+            top: 0px;
+
+        }
+        .nav{
+            background-color: white;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+        }
+    
+        .nav_first_div {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .nav_first_div_first_part {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 80%;
+            /* border-right: 3px solid #767676; */
+        }
+    
+
+        a {
+            text-decoration: none;
+            font-size: 17px;
+            padding: 15px;
+            color: rgb(124, 124, 124);
+
+        }
+
+        i.fa-solid.fa-magnifying-glass {
+            font-size: 26px;
+            color: #767676;
+            padding: 10px;
+        }
+
+        span {
+            padding: 0px 10px;
+            /* display: flex; */
+            justify-content: center;
+            height: 48px;
+            /* border: 1px solid black; */
+            border-radius: 28px;
+            background: #EEEEEE;
+        }
+
+        input.search_header{
+            border: none;
+            width: 625px;
+            height: 50px;
+            color: rgb(124, 124, 124);
+            font-size: 18px;
+            background: none;
+        }
+        input.search_header:focus{
+            outline: none;
+        }
+
+        div.scrollmenu {
+            /* background-color: #EEEEEE; */
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            /* display: inline-block; */
+            color: #767676;
+            /* text-align: center; */
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        #style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+    display: none;
+
+	/* background-color: #F5F5F5; */
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 1px;
+    display: none;
+	/* background-color: #F5F5F5; */
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    display: none;
+
+	/* background-color: #f3e5e5; */
+}
+
+        .nav_secound_div {
+            display: flex;
+            margin-top: 20px;
+            padding: 10px 0px;
+        }
+
+        .nav_secound_div>div a {
+            padding: 14px;
+            display: inline-flex;
+            text-align: center;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .nav_secound_div>div a:hover {
+            color: black;
+        }
+
+        .nav_first_div_secound_part {
+            justify-content: space-around;
+            display: flex;
+            width: 16%;
+        }
+        .border{
+            border-right:2px solid #767676;
+            padding-right: 35px;
+            
+        }
+        .border.unsplash\+{
+            animation: vZKGD 3s linear infinite alternate-reverse;
+            animation-play-state: paused;
+            background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 500%;
+            color: rgba(0, 0, 0, 0);
+        }
+        @media screen and (max-width: 606px) {
+            #content {
+                columns: 1;
+                margin-top: 20px;
+                gap: 20px;
+
+            }
+            .search_div{
+                height: 30rem;
+            }
+            #search_text {
+                top: 20%;
+            }
+            #search_text>p {
+                line-height: 30px;
+                font-size: 18px;
+            }
+            button.button3 {
+                padding: 16px 10px !important;
+                font-size: 16px !important;
+            }
+            #search_text>h1 {
+                font-size: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav" id="header">
+            <div class="nav_first_div">
+                <div class="nav_first_div_first_part">
+    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z" />
+                    </svg>
+                    <span>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+    
+                        <input type="text" placeholder="Search free high-resolution photos" class="search_header">
+    
+                    </span>
+                    <a href="#">Explore</a>
+                    <a href="#">Advertise</a>
+                    <a href="#" class="border unsplash+" >Unsplash+</a>
+                </div>
+                <div class="nav_first_div_secound_part">
+                    <a href="#">Log in</a>
+                    <a href="#">Sign up</a>
+    
+                </div>
+    
+    
+    
+            </div>
+            <div class="nav_secound_div">
+                <div>
+                    
+                    <a href="/index.html" class="border">Editorial</a>
+                </div>
+                <div class="scrollmenu" id="style-2">
+    
+                    <a href="Wallpaper.html">Wallpapers</a>
+                    <a href="3dRenders.html">3D Renders</a>
+                    <a href="travel.html">Travel</a>
+                    <a href="Nature.html">Nature</a>
+                    <a href="Street_photography.html">Street Photography</a>
+                    <a href="Experimental.html">Experimental</a>
+                    <a href="Texture_and_patterns.html">Textures & Patterns</a>
+                    <a href="animal.html">Animals</a>
+                    <a href="Architecture_Interiors.html">Architecture & Interiors</a>
+                    <a href="fashion_beauty.html">Fashion & Beauty</a>
+                    <a href="film.html">Film</a>
+                    <a href="food_and_Drink.html">Food & Drink</a>
+                    <a href="people.html">People</a>
+                    <a href="spirituality.html">Spirituality</a>
+                    <a href="/Business&Work.html">Business & Work</a>
+                    <a href="/Athletics.html">Athletics</a>
+                    <a href="/Health&Wellness.html">Health & Wellness</a>
+                    <a href="/CurrentEvents.html">Current Events</a>
+                    <a href="/Arts&Culture.html">Arts & Culture</a>
+                </div>
+            </div>
+        </header>
+    
+    <div class="search_div">
+
+        <div id="search_text">
+            <h1>Fashion & Beauty</h1>
+            <p style="line-height: 1.6;">
+                Fashion and Beauty are a powerful form of self-expression. This category <br>
+                documents style through inspiring shots of street fashion, skincare <br>
+                products, avant-garde editorial photographs, and more.   </p>
+          
+            <div class="search_input">
+                <button class="button button3">submit to <b>Fashion & Beauty</b></button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="popup hide" id="popu">
+        <button class="button_c">X</button>
+        <a href="#" class="download">Download</a>
+        <img src="" alt="" class="download_img">
+        <button class="control prev_button">&lt;</button>
+        <button class="control next_button">&gt;</button>
+    </div>
+    <div id="content"></div>
+</body>
+</html>
+<script src="fashion.js" type="module"></script>
