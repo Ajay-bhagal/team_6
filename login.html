@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Unsplash</title>
+    <link rel="icon"
+        href="https://unsplash.com/assets/core/logo-black-ddbdd505b663faadbc1e1731369f0929b2616886cb1d7fe11237c473bba02a50.svg">
+    <style>
+        #login {
+            margin: 0% 25%;
+            padding: 0% 10%;
+            line-height: 24px;
+
+        }
+
+        #head {
+            text-align: center;
+        }
+
+        #head>h1 {
+            font-size: 28px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #head p {
+
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #pic1 {
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .fb {
+            text-align: center;
+            font-size: 15px;
+            color: #ffff;
+            background-color: #0D6CE3;
+            padding: 9px 18px;
+            line-height: 24px;
+            font-weight: 400;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #p {
+            text-align: center;
+            /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        #email {
+            text-align: start;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #pass label {
+            text-align: start;
+            margin: 0px 100px 0px 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        #pass a {
+            color: #767676;
+            /* text-align: end; */
+            margin: 0% 0% 0% 28%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        #btn {
+            color: #ffffff;
+            background-color: #111111;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            line-height: 24px;
+            padding: 9px 18px;
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #last p {
+
+            font-size: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #last a {
+            color: #767676;
+            font-size: 15px;
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #entemail {
+
+            width: 100%;
+            line-height: 40px;
+        }
+
+        #entpassword {
+
+            width: 100%;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login">
+        <div id="head">
+            <img
+                src="https://unsplash.com/assets/core/logo-black-ddbdd505b663faadbc1e1731369f0929b2616886cb1d7fe11237c473bba02a50.svg">
+            <h1>Login</h1>
+            <p>Welcome back.</p>
+        </div>
+        <button class="fb"
+            onclick="window.location.href= 'https://www.facebook.com/login.php?skip_api_login=1&api_key=779900868722692&kid_directed_site=0&app_id=779900868722692&signed_next=1&next=https://www.facebook.com/v5.0/dialog/oauth%253Fclient_id=779900868722692&redirect_uri=https%253A%252F%252Funsplash.com%252Fusers%252Fauth%252Ffacebook%252Fcallback&response_type=code&scope=email&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1&ret=login&fbapp_pres=0&logger_id=7815c244-55ae-4907-a62f-81c415e46ce4&tp=unspecified&cancel_url=https://unsplash.com/users/auth/facebook/callback%253Ferror=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1%2523_=_&display=page&locale=en_GB&pl_dbl=0';">
+            <!-- <img
+                id="pic1"
+                src="https://www.bing.com/th?id=OIP.tozpIBHbVCdArjene99JiAD5D6&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> -->
+            Login using facebook </button>
+        <br>
+        <p id="p">OR</p>
+        <form id="form2">
+            <div id="email">
+                <label>Email</label><br>
+                <input type="email" id="entemail">
+            </div><br>
+            <div id="pass">
+                <label>Password</label>
+                <a href="">Forgot your Password</a>
+            </div>
+            <input type="password" id="entpassword"><br><br>
+
+            <input type="button" id="btn" value="Login">
+            <div id="last">
+                <p>Don’t have an account ?<a href="signup.html"> Join Unsplash</a></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.getElementById("btn").addEventListener("click", Login)
+
+    var flag = 0
+    function Login() {
+    //    var info = JSON.parse(localStorage.getItem("user-info")) || [];
+        var AccountDetails = JSON.parse(localStorage.getItem("account-data")) || [];
+        // event.preventDefault();
+
+
+        var enterEmail = document.getElementById("entemail").value;
+        var enterpass = document.getElementById("entpassword").value;
+
+        AccountDetails.map(function (elem) {
+            if (elem.email === enterEmail && elem.password === enterpass) {
+
+
+                alert("Login Successful");
+                flag++;
+                window.location.href = "index.html";
+               
+            }
+           
+        });
+        if (flag === 0) {
+            alert("Login failed Please fill correct data or create account");
+            document.querySelector("#entemail").value = "";
+            document.querySelector("#entpassword").value = "";
+        }
+    }
+
+</script>
