@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsplash</title>
+    <title>Health & Wellness</title>
     <style>
-        
         /* nav bar css */
-        *{
+        * {
             margin: 0px;
-            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
 
         }
+
         div#header {
-            padding-top:10px;
+            padding-top: 10px;
             padding-left: 20px;
             position: sticky;
             top: 0px;
 
         }
-        .nav{
+
+        .nav {
             background-color: white;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             padding: 5px;
         }
-    
+
         .nav_first_div {
             display: flex;
             justify-content: space-between;
@@ -40,7 +42,7 @@
             width: 80%;
             /* border-right: 3px solid #767676; */
         }
-    
+
 
         a {
             text-decoration: none;
@@ -66,7 +68,7 @@
             background: #EEEEEE;
         }
 
-        input.search_header{
+        input.search_header {
             border: none;
             width: 625px;
             height: 50px;
@@ -74,7 +76,8 @@
             font-size: 18px;
             background: none;
         }
-        input.search_header:focus{
+
+        input.search_header:focus {
             outline: none;
         }
 
@@ -124,76 +127,69 @@
             display: flex;
             width: 16%;
         }
-        .border{
-            border-right:2px solid #767676;
+
+        .border {
+            border-right: 2px solid #767676;
             padding-right: 35px;
-            
+
         }
-        .border.unsplash\+{
+
+        .border.unsplash\+ {
             animation: vZKGD 3s linear infinite alternate-reverse;
             animation-play-state: paused;
-            background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
+            background: linear-gradient(135deg, #fa00ff, #00e0ff 50%, #fa00ff);
             -webkit-background-clip: text;
             background-clip: text;
             background-size: 500%;
             color: rgba(0, 0, 0, 0);
         }
-        
+
 
         /* ------------------------------------------------------------------------------------------------------- */
-        
-        .search_div{
+
+        .search_div {
             /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://images.unsplash.com/photo-1671255672894-843cdb23e46a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'); */
             background-image: url('https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
             background-repeat: no-repeat;
             background-size: cover;
-            height: 50rem;
+            height: 45rem;
         }
-        #search_text{
+
+        #search_text {
             color: white;
             width: 66.66667%;
             position: relative;
             margin: 0 auto;
             top: 45%;
         }
-        #search_text>h1{
+
+        #search_text>h1 {
             font-size: 46px;
         }
-        #search_text>p{
+
+        #search_text>p {
             margin: 16px 0;
             font-weight: 500;
             font-size: 23px;
-            line-height: 22px;
+            line-height: 42px;
         }
-        input#searchv {
-            width: 100%;
-            border: none;
-            color: #111;
-            height: 4rem;
-            border-radius: 11px;
-            font-size: 25px;
-            padding-left: 30px;
-        }
-        input#searchv:focus{
-            outline: none;
-        }
-        .search_input {
-            margin-top: 35px;
-        }
-        .popup{
+
+
+        .popup {
             display: flex;
             justify-content: center;
             background: ghostwhite;
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: 80%;
             height: 88vh;
             border-radius: 10px;
             transition: .7s;
         }
-        .button_c{
+
+        .button_c {
             position: absolute;
             top: 10px;
             left: 10px;
@@ -203,7 +199,8 @@
             border: none;
             background: none;
         }
-        .download{
+
+        .download {
             padding: 15px;
             color: white;
             text-decoration: none;
@@ -217,23 +214,27 @@
             text-align: center;
 
         }
-        .download_img{
+
+        .download_img {
             height: 90%;
             width: auto;
             max-width: 80%;
             object-fit: cover;
             margin-top: 20px;
         }
-        .hide{
+
+        .hide {
             display: none;
         }
-        #content{
+
+        #content {
             columns: 3;
             margin-top: 20px;
             gap: 20px;
-            
+
         }
-        #card_img{
+
+        #card_img {
             width: 100%;
             margin: 20px 0px;
             gap: 20px;
@@ -241,26 +242,43 @@
             cursor: pointer;
             object-fit: cover;
         }
+
         #card_img>img {
             width: 100%;
-        } 
-        .control{
+        }
+
+        .control {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
         }
-        .prev_button{
+
+        .prev_button {
             left: 20px;
             font-size: 56px;
             background: none;
             border: none;
         }
-        .next_button{
+
+        .next_button {
             right: 20px;
             font-size: 56px;
             background: none;
             border: none;
+        }
+
+        button.button3 {
+            margin-top: 25px;
+            padding: 16px 40px;
+            font-size: 20px;
+            border-radius: 41px;
+            text-transform: capitalize;
+        }
+
+        button.button3:hover {
+            background: black;
+            color: white;
         }
         @media screen and (max-width: 606px) {
             #content {
@@ -287,38 +305,39 @@
                 font-size: 40px;
             }
         }
-
     </style>
     <script src="https://kit.fontawesome.com/1d73357de3.js" crossorigin="anonymous"> </script>
 
 </head>
+
 <body>
     <header>
         <div class="nav" id="header">
             <div class="nav_first_div">
                 <div class="nav_first_div_first_part">
-    
+
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path d="M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z" />
+                        <path
+                            d="M448,230.17V480H0V230.17H141.13V355.09H306.87V230.17ZM306.87,32H141.13V156.91H306.87Z" />
                     </svg>
                     <span>
                         <i class="fa-solid fa-magnifying-glass"></i>
-    
+
                         <input type="text" placeholder="Search free high-resolution photos" class="search_header">
-    
+
                     </span>
                     <a href="#">Explore</a>
                     <a href="#">Advertise</a>
-                    <a href="#" class="border unsplash+" >Unsplash+</a>
+                    <a href="#" class="border unsplash+">Unsplash+</a>
                 </div>
                 <div class="nav_first_div_secound_part">
                     <a href="#">Log in</a>
                     <a href="#">Sign up</a>
-    
+
                 </div>
-    
-    
-    
+
+
+
             </div>
             <div class="nav_secound_div">
                 <div>
@@ -331,7 +350,7 @@
                     <a href="3dRenders.html">3D Renders</a>
                     <a href="travel.html">Travel</a>
                     <a href="Nature.html">Nature</a>
-                    <a href="Street_photography.html">Street photography</a>
+                    <a href="Street_photography.html"> Street photography</a>
                     <a href="Experimental.html">Experimental</a>
                     <a href="Texture_and_patterns.html">Textures & Patterns</a>
                     <a href="animal.html">Animals</a>
@@ -348,18 +367,18 @@
                     <a href="/Arts&Culture.html">Arts & Culture</a>
                 </div>
             </div>
-        </header>
+    </header>
     <div class="search_div">
 
         <div id="search_text">
-            <h1>Unsplash</h1>
-            <p>The internet’s source for visuals.</p>
-            <p>Powered by creators everywhere.</p>
-            <div class="search_input">
-                <input type="text" id="searchv" >
-            </div>
+            <h1>Health & Wellness</h1>
+            <p>Celebrate a healthy mind, body and soul with photographs that showcase everything from new medical discoveries and alternative medicines, to healthy eating and meditation.</p>
+                <div >
+                    <button class="button3"> Submit to<strong>Health & Wellness</strong> </button>
+                </div>
+            
         </div>
-        
+
     </div>
     <div class="popup hide" id="popu">
         <button class="button_c">X</button>
@@ -370,5 +389,6 @@
     </div>
     <div id="content"></div>
 </body>
+
 </html>
-<script type="module" src="index.js"></script>
+<script type="module" src="Health&Wellness.js"></script>
