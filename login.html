@@ -163,7 +163,7 @@
 
     var flag = 0
     function Login() {
-    //    var info = JSON.parse(localStorage.getItem("user-info")) || [];
+           var info = JSON.parse(localStorage.getItem("user-info")) || [];
         var AccountDetails = JSON.parse(localStorage.getItem("account-data")) || [];
         // event.preventDefault();
 
@@ -178,9 +178,14 @@
                 alert("Login Successful");
                 flag++;
                 window.location.href = "index.html";
-               
+                let obj = {
+                    email: enterEmail,
+                    
+                }
+                info.push(obj);
+                localStorage.setItem("user-info", JSON.stringify(info));
             }
-           
+
         });
         if (flag === 0) {
             alert("Login failed Please fill correct data or create account");
