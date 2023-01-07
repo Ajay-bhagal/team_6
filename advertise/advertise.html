@@ -12,6 +12,94 @@
           sans-serif;
         background-color: rgb(240, 240, 240);
       }
+      #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      #navbar > p > a {
+        text-decoration: none;
+        color: black;
+      }
+      #navbar > img {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        padding-left: 10px;
+        /* padding-right: 5px; */
+      }
+      #navbar > #input > input {
+        width: 800px;
+        height: 35px;
+        background-color: rgb(213, 213, 213);
+        border-color: white;
+        border-style: hidden;
+        /* text-align: center; */
+      }
+      #navbar > .profile {
+        width: 30px;
+        height: 30px;
+      }
+      #navbar > .menu {
+        font-size: larger;
+        cursor: pointer;
+      }
+      #navbar > button {
+        padding: 5px;
+        background-color: white;
+        color: gray;
+        border-color: rgb(195, 195, 195);
+        border-style: solid;
+        cursor: pointer;
+      }
+      #navbar > button:hover {
+        color: black;
+        border-color: black;
+      }
+      #navbar > #input {
+        display: flex;
+        align-items: center;
+        background-color: rgb(213, 213, 213);
+        height: 39px;
+        border-radius: 20px 20px 20px 20px;
+      }
+      #navbar > #input > img {
+        width: 30px;
+        height: 22px;
+        background-color: rgb(213, 213, 213);
+      }
+      #navbar > #input > .left {
+        border-radius: 20px 0px 0px 20px;
+        padding-left: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+      #navbar > #input > .right {
+        border-radius: 0px 20px 20px 0px;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+      #navbar > .unsplash > a {
+        background: linear-gradient(
+          to left,
+          /* rgba(0, 224, 255, 1) 0%,
+          rgba(250, 0, 255, 1) 33%, */
+            rgba(0, 224, 255, 1) 66%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      #navbar > p {
+        margin-left: -50px;
+      }
+      #navbar > .menu {
+        margin-left: 0px;
+      }
       #container {
         width: 85%;
         margin: auto;
@@ -348,6 +436,32 @@
     </style>
   </head>
   <body>
+    <div id="navbar">
+      <img src="./Unsplash_Symbol.png" alt="" />
+      <div id="input">
+        <img src="./icons8-search-50.png" alt="" class="left" />
+        <input
+          type="text"
+          placeholder="&nbsp&nbsp Search free high-resolution photos"
+        />
+        <img src="./google-lens.svg" alt="" class="right" />
+      </div>
+      <p class="advertise">
+        <a href="#">Advertise</a>
+      </p>
+      <p id="Blog"><a href="#">Blog</a></p>
+      <p class="unsplash">
+        <a href="../unsplash++/unsplash.html">Unsplash+</a>
+      </p>
+      <button>Submit a photo</button>
+      <img src="./ringing.png" alt="" />
+      <img
+        class="profile"
+        src="./—Pngtree—beautiful muslim hijab girl woman_8330498.png"
+        alt=""
+      />
+      <p class="menu">☰</p>
+    </div>
     <div id="container">
       <div id="top1">
         <div id="left">
