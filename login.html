@@ -145,7 +145,7 @@
         </div>
         <button class="fb"
             onclick="window.location.href= 'https://www.facebook.com/login.php?skip_api_login=1&api_key=779900868722692&kid_directed_site=0&app_id=779900868722692&signed_next=1&next=https://www.facebook.com/v5.0/dialog/oauth%253Fclient_id=779900868722692&redirect_uri=https%253A%252F%252Funsplash.com%252Fusers%252Fauth%252Ffacebook%252Fcallback&response_type=code&scope=email&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1&ret=login&fbapp_pres=0&logger_id=7815c244-55ae-4907-a62f-81c415e46ce4&tp=unspecified&cancel_url=https://unsplash.com/users/auth/facebook/callback%253Ferror=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1%2523_=_&display=page&locale=en_GB&pl_dbl=0';">
-            
+
             Login using facebook </button>
         <br>
         <p id="p">OR</p>
@@ -160,7 +160,7 @@
             </div>
             <input type="password" id="entpassword" required><br><br>
 
-            <input type="submit" id="btn" value="Login">
+            <input type="button" id="btn" value="Login">
             <div id="last">
                 <p>Don’t have an account ?<a href="signup.html"> Join Unsplash</a></p>
             </div>
@@ -171,34 +171,39 @@
 
 </html>
 <script>
-    document.getElementById("btn").addEventListener("submit", Login)
+    document.getElementById("btn").addEventListener("click", Login)
 
     var flag = 0
     function Login() {
         var AccountDetails = JSON.parse(localStorage.getItem("account-data")) || [];
-        event.preventDefault();
+        // event.preventDefault();
 
 
         var enterEmail = document.getElementById("entemail").value;
         var enterpass = document.getElementById("entpassword").value;
+        if (enterEmail !== "" && enterpass !== "") {
+            AccountDetails.map(function (elem) {
 
-        AccountDetails.map(function (elem) {
+                if (elem.email === enterEmail && elem.password === enterpass) {
 
-            if (elem.email === enterEmail && elem.password === enterpass) {
+                    alert("Login Successful");
+                    flag++;
 
-                alert("Login Successful");
-                flag++;
-
-                var user = elem.username;
-                let obj = {
-                    email: enterEmail,
-                    user: user
+                    var user = elem.username;
+                    let obj = {
+                        email: enterEmail,
+                        user: user
+                    }
+                    localStorage.setItem("user-info", JSON.stringify(obj));
+                    window.location.href ="index.html";
                 }
-                localStorage.setItem("user-info", JSON.stringify(obj));
-                window.location.href = "index.html";
-            }
 
-        });
+            });
+        }
+        else{
+            alert("Enter Correct details")
+        }
+
         if (flag === 0) {
             alert("Login failed Please fill correct data or create account");
             document.querySelector("#entemail").value = "";
