@@ -34,6 +34,7 @@
         background-color: rgb(233, 233, 233);
         border-color: white;
         border-style: hidden;
+        outline: none;
         /* text-align: center; */
       }
       #navbar > .profile {
@@ -483,11 +484,23 @@
         background-color: white;
         color: black;
       }
+      #menuimg {
+        width: 600px;
+        position: fixed;
+        top: 60px;
+        right: 2px;
+      }
+      #upload{
+        width: 1200px;
+        position: fixed;
+        top: 60px;
+        right: 120px;
+      }
     </style>
   </head>
   <body>
     <div id="navbar">
-      <img src="./Unsplash_Symbol.png" alt="" />
+      <img src="./Unsplash_Symbol.png" alt="" onclick="index()" />
       <div id="input">
         <img src="./icons8-search-50.png" alt="" class="left" />
         <input
@@ -501,15 +514,16 @@
       </p>
       <p class="Blog"><a href="#">Blog</a></p>
       <p class="unsplash"><a href="./unsplash.html">Unsplash+</a></p>
-      <button>Submit a photo</button>
+      <button onclick="photo()">Submit a photo</button>
       <img src="./ringing.png" alt="" />
       <img
         class="profile"
         src="./—Pngtree—beautiful muslim hijab girl woman_8330498.png"
         alt=""
       />
-      <p class="menu">☰</p>
+      <p class="menu" onclick="menu()">☰</p>
     </div>
+    <div id="menu"></div>
     <div id="container">
       <div id="top1">
         <div id="left">
@@ -893,6 +907,32 @@
         document.getElementById("n6append").innerHTML = "";
       }
       ct++;
+    }
+    function index() {
+      window.location.href = "../index.html";
+    }
+    let menui = 0;
+    function menu() {
+      if (menui % 2 == 0) {
+        let img = document.createElement("img");
+        img.src = "./menuimg.png";
+        img.setAttribute("id", "menuimg");
+        document.getElementById("menu").append(img);
+      } else {
+        document.getElementById("menu").innerHTML = "";
+      }
+      menui++;
+    }
+    function photo() {
+      if (menui % 2 == 0) {
+        let img = document.createElement("img");
+        img.src = "./upload2.png";
+        img.setAttribute("id", "upload");
+        document.getElementById("menu").append(img);
+      } else {
+        document.getElementById("menu").innerHTML = "";
+      }
+      menui++;
     }
   </script>
 </html>
