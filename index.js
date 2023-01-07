@@ -1,3 +1,24 @@
+let userdata=JSON.parse(localStorage.getItem("user-info")) ;
+    console.log(userdata);
+    if(userdata!=null){
+        console.log(userdata)
+        document.getElementById("user_name").innerHTML=userdata.user;
+        document.getElementById("login_user").style.display="block";
+        document.getElementById("logout_user").style.display="none";
+    }
+document.getElementById("user").addEventListener("click",()=>{
+
+    document.getElementById("user_popup").style.display="block"
+})
+
+document.getElementById("logout").addEventListener("click",()=>{
+    localStorage.setItem("user-info",JSON.stringify({}));
+})
+document.querySelector(".search_header").addEventListener("input",()=>{
+    deboubcing(getData,2000);
+
+})
+//---------------------------------------------------------------------------------
 document.getElementById("searchv").addEventListener("input",()=>{
     deboubcing(getData,2000);
 })
@@ -8,12 +29,15 @@ const url=`https://api.unsplash.com/photos/random?client_id=${apiKey}&count=30`;
 let curr=0;
 let imgData;
 const container =document.getElementById("content");
+
 const deboubcing= (fn,delay)=>{
     if(id!=undefined){
         clearTimeout(id);
     }
     id=setTimeout(()=>{
-        searchval=document.getElementById("searchv").value;
+
+        searchval=document.getElementById("searchv").value || document.querySelector(".search_header").value;
+
         const searchurl=`https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${searchval}&per_page=30`;
 
         console.log(searchval)
@@ -86,3 +110,5 @@ document.querySelector(".next_button").addEventListener("click",()=>{
 
 getData(url);
 export{getData,display,popupData,imgData,id,curr,apiKey,searchval,container};
+
+
