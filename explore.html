@@ -329,6 +329,11 @@
             opacity: 0;
             pointer-events: none;
         }
+        @media screen and (max-width: 606px) {
+            #gallary{
+                columns: 1;
+            }
+        }
     </Style>
     <script src="https://kit.fontawesome.com/60f60c7e47.js" crossorigin="anonymous"></script>
 </head>
@@ -448,7 +453,7 @@
     // nav functions
     let logout = false;
     let menu = false;
-    let user_data = JSON.parse(localStorage.getItem("user_info")) || {};
+    let user_data = JSON.parse(localStorage.getItem("user-info")) || {};
     let user = user_data.user || "";
 
     if (user === "") {
@@ -462,7 +467,7 @@
     document.getElementById("logout").addEventListener("click", () => {
         user = "";
         user_data = {};
-        localStorage.setItem("user_info", JSON.stringify(user_data));
+        localStorage.setItem("user-info", JSON.stringify(user_data));
         window.location.href = "explore.html";
     })
 

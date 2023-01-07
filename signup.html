@@ -169,28 +169,28 @@
                 <div id="parent1">
                     <div>
                         <label>First Name</label><br><br>
-                        <input type="text" id="firstName">
+                        <input type="text" id="firstName" required>
                     </div>
                     <div id="lastn">
                         <label>Last Name</label><br><br>
-                        <input type="text" id="lastName">
+                        <input type="text" id="lastName" required>
                     </div>
                 </div>
                 <div id="parent2">
                     <div>
                         <label>Email</label><br><br>
-                        <input type="email" id="email">
+                        <input type="email" id="email" required>
                     </div>
                     <div>
                         <label>Username <span> (only letters, numbers, and underscores) </span></label><br><br>
-                        <input id="username">
+                        <input id="username" required>
                     </div>
                     <div>
                         <label>Password <span>(min. 8 char)</span></label><br><br>
-                        <input type="password" id="password">
+                        <input type="password" id="password" required>
                     </div>
                 </div>
-                <input type="button" id="btn2" value="Join">
+                <input type="submit" id="btn2" value="Join">
 
                 <p id="last">By joining, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy</a>.</p>
             </form>
@@ -203,13 +203,13 @@
 </html>
 <script>
     var Details = JSON.parse(localStorage.getItem("account-data")) || [];
-    document.getElementById("btn2").addEventListener("click", Join);
+    document.getElementById("btn2").addEventListener("submit", Join);
     // let btn = document.getElementById("btn2");
     // console.log(btn);
 
 
     function Join() {
-        // event.preventDefault();
+        event.preventDefault();
 
         var emailid = document.getElementById("email").value;
         var userid = document.getElementById("username").value;

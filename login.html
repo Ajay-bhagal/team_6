@@ -152,15 +152,15 @@
         <form id="form2">
             <div id="email">
                 <label>Email</label><br>
-                <input type="email" id="entemail">
+                <input type="email" id="entemail" required>
             </div><br>
             <div id="pass">
                 <label>Password</label>
                 <a href="">Forgot your Password</a>
             </div>
-            <input type="password" id="entpassword"><br><br>
+            <input type="password" id="entpassword" required><br><br>
 
-            <input type="button" id="btn" value="Login">
+            <input type="submit" id="btn" value="Login">
             <div id="last">
                 <p>Don’t have an account ?<a href="signup.html"> Join Unsplash</a></p>
             </div>
@@ -171,12 +171,12 @@
 
 </html>
 <script>
-    document.getElementById("btn").addEventListener("click", Login)
+    document.getElementById("btn").addEventListener("submit", Login)
 
     var flag = 0
     function Login() {
         var AccountDetails = JSON.parse(localStorage.getItem("account-data")) || [];
-        // event.preventDefault();
+        event.preventDefault();
 
 
         var enterEmail = document.getElementById("entemail").value;
