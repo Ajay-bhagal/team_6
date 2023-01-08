@@ -7,29 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Athletics</title>
     <style>
+        
         /* nav bar css */
-        * {
+        *{
             margin: 0px;
-            font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
 
         }
-
         div#header {
-            padding-top: 10px;
+            padding-top:10px;
             padding-left: 20px;
             position: sticky;
             top: 0px;
 
         }
-
-        .nav {
+        .nav{
             background-color: white;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
             padding: 5px;
         }
-
+    
         .nav_first_div {
             display: flex;
             justify-content: space-between;
@@ -42,7 +41,7 @@
             width: 80%;
             /* border-right: 3px solid #767676; */
         }
-
+    
 
         a {
             text-decoration: none;
@@ -68,16 +67,15 @@
             background: #EEEEEE;
         }
 
-        input.search_header {
+        input.search_header{
             border: none;
-            width: 625px;
+            width: 500px;
             height: 50px;
             color: rgb(124, 124, 124);
             font-size: 18px;
             background: none;
         }
-
-        input.search_header:focus {
+        input.search_header:focus{
             outline: none;
         }
 
@@ -112,6 +110,8 @@
             padding: 14px;
             display: inline-flex;
             text-align: center;
+            font-size: 17px;
+
         }
 
         a:hover {
@@ -125,71 +125,78 @@
         .nav_first_div_secound_part {
             justify-content: space-around;
             display: flex;
-            width: 16%;
+            width: 20%;
         }
-
-        .border {
-            border-right: 2px solid #767676;
+        .border{
+            border-right:2px solid #767676;
             padding-right: 35px;
-
+            
         }
-
-        .border.unsplash\+ {
+        .border.unsplash\+{
             animation: vZKGD 3s linear infinite alternate-reverse;
             animation-play-state: paused;
-            background: linear-gradient(135deg, #fa00ff, #00e0ff 50%, #fa00ff);
+            background: linear-gradient(135deg,#fa00ff,#00e0ff 50%,#fa00ff);
             -webkit-background-clip: text;
             background-clip: text;
             background-size: 500%;
             color: rgba(0, 0, 0, 0);
         }
-
+        
 
         /* ------------------------------------------------------------------------------------------------------- */
-
-        .search_div {
+        
+        .search_div{
             /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://images.unsplash.com/photo-1671255672894-843cdb23e46a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'); */
-            background-image: url('https://wallpaperaccess.com/full/2604873.jpg');
+            background-image: url('https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
             background-repeat: no-repeat;
             background-size: cover;
-            height: 45rem;
+            height: 43rem;
         }
-
-        #search_text {
+        #search_text{
             color: white;
             width: 66.66667%;
             position: relative;
             margin: 0 auto;
-            top: 45%;
+            top: 35%;
         }
-
-        #search_text>h1 {
+        #search_text>h1{
             font-size: 46px;
         }
-
-        #search_text>p {
+        #search_text>p{
             margin: 16px 0;
             font-weight: 500;
             font-size: 23px;
-            line-height: 42px;
+            line-height: 35px;
         }
-
-
-        .popup {
+        input#searchv {
+            width: 100%;
+            border: none;
+            color: #111;
+            height: 4rem;
+            border-radius: 11px;
+            font-size: 25px;
+            padding-left: 30px;
+        }
+        input#searchv:focus{
+            outline: none;
+        }
+        .search_input {
+            margin-top: 35px;
+        }
+        .popup{
             display: flex;
             justify-content: center;
             background: ghostwhite;
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
             width: 80%;
             height: 88vh;
             border-radius: 10px;
             transition: .7s;
         }
-
-        .button_c {
+        .button_c{
             position: absolute;
             top: 10px;
             left: 10px;
@@ -199,42 +206,35 @@
             border: none;
             background: none;
         }
-
-        .download {
-            padding: 15px;
+        .download{
+            text-transform: capitalize;
+            padding: 10px 20px;
+            background-color: rgb(60, 180, 110);
             color: white;
-            text-decoration: none;
+            border-radius: 5px;
             position: absolute;
-            right: 25px;
+            text-decoration: none;
             top: 10px;
-            background-color: #131413c2;
-            border-radius: 24px;
-            width: 120px;
-            font-size: 18px;
-            text-align: center;
+            right: 10px;
 
         }
-
-        .download_img {
+        .download_img{
             height: 90%;
             width: auto;
             max-width: 80%;
             object-fit: cover;
             margin-top: 20px;
         }
-
-        .hide {
+        .hide{
             display: none;
         }
-
-        #content {
+        #content{
             columns: 3;
             margin-top: 20px;
             gap: 20px;
-
+            
         }
-
-        #card_img {
+        #card_img{
             width: 100%;
             margin: 20px 0px;
             gap: 20px;
@@ -242,69 +242,107 @@
             cursor: pointer;
             object-fit: cover;
         }
-
         #card_img>img {
             width: 100%;
-        }
-
-        .control {
+        } 
+        .control{
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
         }
-
-        .prev_button {
+        .prev_button{
             left: 20px;
             font-size: 56px;
             background: none;
             border: none;
         }
-
-        .next_button {
+        .next_button{
             right: 20px;
             font-size: 56px;
             background: none;
             border: none;
         }
-
+        .nav_first_div{
+            width: 100%;
+        }
         button.button3 {
-            margin-top: 25px;
-            padding: 16px 40px;
-            font-size: 20px;
-            border-radius: 41px;
-            text-transform: capitalize;
+            font-size: 15px;
+            height: 44px;
+            line-height: 42px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #0000;
         }
+        
+        @media screen and (max-width: 1228px) {
+            
+            input.search_header {
+                width: 300px;
+            }
+        }
+        @media screen and (max-width: 964px) {
+            input.search_header {
+                width: 250px;
+                font-size: 14px;
 
-        button.button3:hover {
-            background: black;
-            color: white;
+            }
+
+            .fa-magnifying-glass:before, .fa-search:before {
+                content: "\f002";
+                font-size: 14px;
+            }
         }
-        @media screen and (max-width: 606px) {
-            #content {
+        @media screen and (max-width: 600px) {
+            #content{
                 columns: 1;
                 margin-top: 20px;
                 gap: 20px;
-
-            }
-            .search_div{
-                height: 30rem;
-            }
-            #search_text {
-                top: 20%;
-            }
-            #search_text>p {
-                line-height: 30px;
-                font-size: 18px;
-            }
-            button.button3 {
-                padding: 16px 10px !important;
-                font-size: 16px !important;
-            }
-            #search_text>h1 {
-                font-size: 40px;
+                
             }
         }
+        @media only screen and (max-width: 600px) {
+            input.search_header {
+                
+                width: 200px !important;
+            }
+        }
+       
+        @media screen and (max-width: 892px) {
+            a#dis {
+                display: none;
+            }
+            input.search_header {
+                border: none;
+                width: 350px;
+                height: 50px;
+                color: rgb(124, 124, 124);
+                font-size: 18px;
+                background: none;
+            }
+            .nav_first_div_secound_part{
+                display: none;
+            }
+            .nav_first_div {
+                justify-content: center;
+            }
+            
+            /* --------------------------- */
+            
+        }
+        div#login_user {
+            margin-top: 16px;
+        }
+        span#user_name {
+            background: none;
+        }
+        div#user_popup {
+            position: fixed;
+            right: 173px;
+            top: 52px;
+            border: 1px solid #eaeae3d4;
+        }
+
     </style>
     <script src="https://kit.fontawesome.com/1d73357de3.js" crossorigin="anonymous"> </script>
 
@@ -326,15 +364,27 @@
                         <input type="text" placeholder="Search free high-resolution photos" class="search_header">
 
                     </span>
-                    <a href="#">Explore</a>
-                    <a href="#">Advertise</a>
-                    <a href="#" class="border unsplash+">Unsplash+</a>
+                    <a href="#" id="dis">Explore</a>
+                    <a href="#" id="dis">Advertise</a>
+                    <a href="#" class="border unsplash+" id="dis">Unsplash+</a>
                 </div>
                 <div class="nav_first_div_secound_part">
                     <a href="#">Log in</a>
                     <a href="#">Sign up</a>
 
                 </div>
+                 <!-- ------------------- -->
+                 <div class="nav_first_div_secound_part" id="login_user" style="display: none;">
+                    <a id="user" class="nav_a2"><i class="fa-regular fa-user"></i></a>
+                    <a class="nav_a2"><span id="user_name">Ayan</span></a>
+    
+                </div>
+                <div id="user_popup" style="display: none;">
+                    <a href="" class="nav_pop_user">View Profile</a>
+                    <hr>
+                    <a href="" id="logout" class="nav_pop_user">Log Out</a>
+                </div>
+                <!-- ------------------------------------------------------------ -->
 
 
 
@@ -374,18 +424,18 @@
             <h1>Athletics</h1>
             <p>This category celebrates action in the every day — from the tough gym workouts, to tense basketball games, to the extreme heights of heliskiing. Get up close and personal with the raw emotions of the athlete, the frenzy of the court crowd, and the danger of challenging outdoor pursuits.</p>
                 <div >
-                    <button class="button3"> Submit to<strong>Athletics</strong> </button>
+                    <button class="button3"> Submit to <strong>Athletics</strong> </button>
                 </div>
             
         </div>
 
     </div>
     <div class="popup hide" id="popu">
-        <button class="button_c">X</button>
+        <button class="button_c"><i class="fa-solid fa-xmark"></i></button>
         <a href="#" class="download" download>Download</a>
         <img src="" alt="" class="download_img">
-        <button class="control prev_button">&lt;</button>
-        <button class="control next_button">&gt;</button>
+        <button class="control prev_button"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="control next_button"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div id="content"></div>
 </body>

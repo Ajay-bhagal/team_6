@@ -11,7 +11,6 @@
         *{
             margin: 0px;
             font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
-
         }
         div#header {
             padding-top:10px;
@@ -109,6 +108,7 @@
             padding: 14px;
             display: inline-flex;
             text-align: center;
+            font-size: 17px;
         }
 
         a:hover {
@@ -147,14 +147,14 @@
             background-image: url('https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
             background-repeat: no-repeat;
             background-size: cover;
-            height: 50rem;
+            height: 43rem;
         }
         #search_text{
             color: white;
             width: 66.66667%;
             position: relative;
             margin: 0 auto;
-            top: 45%;
+            top: 35%;
         }
         #search_text>h1{
             font-size: 46px;
@@ -204,17 +204,15 @@
             background: none;
         }
         .download{
-            padding: 15px;
+            text-transform: capitalize;
+            padding: 10px 20px;
+            background-color: rgb(60, 180, 110);
             color: white;
-            text-decoration: none;
+            border-radius: 5px;
             position: absolute;
-            right: 25px;
+            text-decoration: none;
             top: 10px;
-            background-color: #131413c2;
-            border-radius: 24px;
-            width: 120px;
-            font-size: 18px;
-            text-align: center;
+            right: 10px;
 
         }
         .download_img{
@@ -266,6 +264,7 @@
             width: 100%;
         }
         
+        
         @media screen and (max-width: 1228px) {
             
             input.search_header {
@@ -292,6 +291,12 @@
                 
             }
         }
+        @media only screen and (max-width: 600px) {
+            input.search_header {
+                
+                width: 200px !important;
+            }
+        }
        
         @media screen and (max-width: 892px) {
             a#dis {
@@ -299,7 +304,7 @@
             }
             input.search_header {
                 border: none;
-                width: 300px;
+                width: 350px;
                 height: 50px;
                 color: rgb(124, 124, 124);
                 font-size: 18px;
@@ -413,11 +418,11 @@
         
     </div>
     <div class="popup hide" id="popu">
-        <button class="button_c">X</button>
+        <button class="button_c"><i class="fa-solid fa-xmark"></i></button>
         <a href="#" class="download" download>Download</a>
         <img src="" alt="" class="download_img">
-        <button class="control prev_button">&lt;</button>
-        <button class="control next_button">&gt;</button>
+        <button class="control prev_button"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="control next_button"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div id="content"></div>
 </body>
