@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Unsplash | Unsplash</title>
+    <link rel="icon"
+        href="https://unsplash.com/assets/core/logo-black-ddbdd505b663faadbc1e1731369f0929b2616886cb1d7fe11237c473bba02a50.svg">
+    <style>
+        /* #parent
+        {
+        display: flex;
+        
+       } */
+        label {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #signup>h4 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 46px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #signup>p {
+            text-align: center;
+            font-size: 15px;
+            /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+            font-weight: 500;
+            margin-bottom: 20%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #signup a {
+            color: #767676;
+
+        }
+
+        .fb {
+
+            text-align: center;
+            font-size: 15px;
+            color: #ffff;
+            background-color: #0D6CE3;
+            padding: 9px 18px;
+            line-height: 24px;
+            font-weight: 400;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #p {
+            text-align: center;
+            font-size: 12px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #parent1 {
+            display: flex;
+        }
+
+        #lastn {
+            margin: 0px 0px 0px 25px
+        }
+
+        /* #parent1 label {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            line-height: 24px;
+        } */
+
+        input {
+            line-height: 35px;
+        }
+
+        #parent2 input {
+            width: 100%;
+        }
+
+        #parent1 input {
+            width: 100%;
+            margin: auto;
+        }
+
+        #last {
+            text-align: center;
+            font-size: 13px;
+            color: #767676;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #last a {
+            color: #767676;
+        }
+
+        #child2 {
+            margin: 2% 10% 10% 10%;
+
+        }
+
+        #parent2>div {
+            margin-top: 20px;
+        }
+
+        #btn2 {
+            align-items: center;
+            margin-top: 24px;
+            padding: 9px 18px;
+            width: 103%;
+            font-size: 15px;
+            background-color: black;
+            color: #ffffff;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
+        span {
+            color: #767676;
+        }
+
+        input {
+            border-style: solid;
+            border-radius: 5px;
+            /* border-radius: 5px; */
+        }
+
+        #pic {
+            height: 20px;
+
+
+            border-radius: 50%;
+        }
+
+        @media only screen and (min-width:961px) {
+            #parent {
+                display: flex;
+            }
+        }
+
+        @media only screen and (min-width:0px)and (max-width:960px) {
+            #child {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="child1">
+            <img class="mpic" src="pic1.png" alt="pic">
+        </div>
+        <div id="child2">
+            <div id="signup">
+                <h4>Join Unsplash</h4>
+                <p>Already have an account? <a href="login.html">Login</a> </p>
+            </div>
+            <button class="fb"
+                onclick="window.location.href= 'https://www.facebook.com/login.php?skip_api_login=1&api_key=779900868722692&kid_directed_site=0&app_id=779900868722692&signed_next=1&next=https://www.facebook.com/v5.0/dialog/oauth%253Fclient_id=779900868722692&redirect_uri=https%253A%252F%252Funsplash.com%252Fusers%252Fauth%252Ffacebook%252Fcallback&response_type=code&scope=email&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1&ret=login&fbapp_pres=0&logger_id=7815c244-55ae-4907-a62f-81c415e46ce4&tp=unspecified&cancel_url=https://unsplash.com/users/auth/facebook/callback%253Ferror=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=fcaf99d0129b1f7f39a00e4f99ef72c333149676ab0b5de1%2523_=_&display=page&locale=en_GB&pl_dbl=0';">
+                <!-- <img
+                    id="pic"
+                    src="https://www.bing.com/th?id=OIP.tozpIBHbVCdArjene99JiAD5D6&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> -->
+                Login using facebook </button>
+
+            <p id="p">OR</p>
+            <form id="form">
+                <div id="parent1">
+                    <div>
+                        <label>First Name</label><br><br>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div id="lastn">
+                        <label>Last Name</label><br><br>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+                <div id="parent2">
+                    <div>
+                        <label>Email</label><br><br>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div>
+                        <label>Username <span> (only letters, numbers, and underscores) </span></label><br><br>
+                        <input id="username" required>
+                    </div>
+                    <div>
+                        <label>Password <span>(min. 8 char)</span></label><br><br>
+                        <input type="password" id="password" required>
+                    </div>
+                </div>
+                <input type="button" id="btn2" value="Join">
+
+                <p id="last">By joining, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy</a>.</p>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    var Details = JSON.parse(localStorage.getItem("account-data")) || [];
+    document.getElementById("btn2").addEventListener("click", Join);
+    // let btn = document.getElementById("btn2");
+    // console.log(btn);
+
+
+    function Join() {
+        // event.preventDefault();
+
+        var emailid = document.getElementById("email").value;
+        var userid = document.getElementById("username").value;
+        var passwrd = document.getElementById("password").value;
+        if (emailid !== "" && userid !== "" && passwrd !== "") {
+            let obj = {
+                email: emailid,
+                password: passwrd,
+                username: userid
+            };
+            Details.push(obj);
+            localStorage.setItem("account-data", JSON.stringify(Details));
+            alert("Account Created Succesfully")
+            window.location.href = "login.html";
+        }
+        else{
+            alert("Fill all details")
+        }
+        // console.log(emailid);
+
+    }
+</script>
