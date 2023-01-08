@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp</title>
+    <style>
+        #top {
+            display: grid;
+
+        }
+
+        #inp {
+            width: 250px;
+            height: 30px;
+            margin-left: 500px;
+            background-color: rgb(204, 202, 198);
+            border: none;
+            border-radius: 5px;
+            margin-top: 100px;
+            outline-color: rgb(192, 162, 162);
+        }
+
+        #btn {
+            width: 120px;
+            height: 35px;
+            margin-top: 5px;
+            margin-left: 564px;
+            background-color: rgb(68, 146, 235);
+            color: white;
+            border-color: rgb(0, 0, 0);
+            border-radius: 5px;
+
+
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #ui_div {
+            margin-top: 20px;
+            margin-left: 350px;
+            height: 200px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <input type="number" name="" id="inp" placeholder="Enter OTP">
+        <button id="btn" onclick="submitotp()">Submit</button>
+    </div>
+    
+    <div id="ui_div"></div>
+</body>
+
+</html>
+<script>
+    let timeout;
+    function myfun(){
+        timeout=setTimeout(alertfun,1000);
+    }
+    function alertfun(){
+        alert("Dear customer, the one time password (OTP)  is 12345")
+    }
+    myfun();
+    function submitotp(){
+         document.getElementById("ui_div").innerText = "";
+        var image = document.createElement("img");
+        image.src = "https://thumbs.gfycat.com/AcclaimedPositiveGull-size_restricted.gif";
+        var p1 = document.createElement("p");
+        p1.innerText = "Processing Payment";
+
+        document.getElementById("ui_div").append(image, p1);
+        var pin = document.getElementById("inp").value;
+        var p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                if (pin === "12345") {
+                    resolve("Pyment  Successfull");
+                } else {
+                    reject("Wrong OTP");
+                }
+            }, 1000);
+        });
+        p.then(function (result) {
+            document.getElementById("ui_div").innerText = "";
+            var image = document.createElement("img");
+            image.id = "Success";
+            image.src =
+                "https://cdn.uxhack.co/static/Hacks/images/success-tick.gif";
+           
+            var p1 = document.createElement("p");
+            p1.innerText = "Payment Successfull";
+            document.getElementById("ui_div").append(image, p1);
+             alert(result);
+            
+        })
+        p.catch(function (error) {
+            document.getElementById("ui_div").innerText = "";
+            var image = document.createElement("img");
+            image.id = "fail";
+            image.src =
+                "https://cdn.dribbble.com/users/1000837/screenshots/3857924/loader_failed_01.gif";
+            var p1 = document.createElement("p");
+            p1.innerText = "OTP Doesn't Match";
+            document.getElementById("ui_div").append(image, p1);
+            alert(error);
+        });
+    }
+   
+</script>
