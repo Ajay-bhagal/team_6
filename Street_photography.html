@@ -4,139 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsplash</title>
+    <title>Street</title>
+
     <style>
-        .search_div{
-            background-image: url('https://images.unsplash.com/photo-1559406041-c7d2b2e98690?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTU5Nzd8MHwxfHNlYXJjaHw1fHxzdHJlZXQtcGhvdG9ncmFwaHl8ZW58MHx8fHwxNjcyOTE1NzI1&ixlib=rb-4.0.3&q=80&w=1080');
-            /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcXr_DFGzv9FIFsI7-NSIjG6K-4R1hRZQBAA&usqp=CAU'); */
-            background-repeat: no-repeat;
-            background-size: cover;
-            /* background-blend-mode: overlay; */
-            height: 50rem;
-        }
-        #search_text{
-            color: white;
-            width: 66.66667%;
-            position: relative;
-            margin: 0 auto;
-            top: 45%;
-        }
-        #search_text>h1{
-            font-size: 46px;
-            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
-        }
-        #search_text>p{
-            margin: 16px 0;
-            font-weight: 500;
-            font-size: 23px;
-            font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
-            line-height: 22px;
-        }
-        input[type="text"] {
-            border: none;
-            color: #111;
-            height: 4rem;
-            border-radius: 11px;
-            width: 100%;
-        }
-        .search_input {
-            margin-top: 35px;
-        }
-        .popup{
-            display: flex;
-            justify-content: center;
-            background: ghostwhite;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            width: 80%;
-            height: 88vh;
-            border-radius: 10px;
-            transition: .7s;
-        }
-        .button_c{
-            position: absolute;
-            top: 10px;
-            left:10px;
-            width: 20px;
-            height: 20px;
-        }
-        .download{
-            padding: 10px;
-            color: white;
-            text-decoration: none;
-            position: absolute;
-            right: 10px;
-            top:10px;
-            background-color: green;
-
-        }
-        .download_img{
-            height: 90%;
-            width: auto;
-            max-width: 80%;
-            object-fit: cover;
-            margin-top: 20px;
-        }
-        .hide{
-            display: none;
-        }
-        #content{
-            columns: 3;
-            margin-top: 20px;
-            gap: 20px;
-            
-        }
-        #card_img{
-            width: 100%;
-            margin: 20px 0px;
-            gap: 20px;
-            height: 100%;
-            cursor: pointer;
-            object-fit: cover;
-        }
-        #card_img>img {
-            width: 100%;
-        } 
-        .control{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        .prev_button{
-            left: 20px;
-        }
-        .next_button{
-            right: 20px;
-        }
-
-        .button {
-        background-color: white; /* Green */
-        border: none;
-        color: black;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        }
-        .button3 {
-            
-        padding: 24px 40px;
-        font-size: 20px;
-        border-radius: 41px;
-        text-transform: capitalize;
-        }
-        .button.button3:hover {
-        background: black;
-        color: white;
-        }
-
-
-*{
+        
+        /* nav bar css */
+        *{
             margin: 0px;
             font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
 
@@ -196,7 +69,7 @@
 
         input.search_header{
             border: none;
-            width: 625px;
+            width: 500px;
             height: 50px;
             color: rgb(124, 124, 124);
             font-size: 18px;
@@ -220,30 +93,12 @@
             text-decoration: none;
         }
 
-        #style-2::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-    display: none;
-
-	/* background-color: #F5F5F5; */
-}
-
-#style-2::-webkit-scrollbar
-{
-	width: 1px;
-    display: none;
-	/* background-color: #F5F5F5; */
-}
-
-#style-2::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    display: none;
-
-	/* background-color: #f3e5e5; */
-}
+        #style-2::-webkit-scrollbar {
+            /* width: 1px; */
+            /* color: red; */
+            display: none;
+            background-color: #F5F5F5;
+        }
 
         .nav_secound_div {
             display: flex;
@@ -255,6 +110,8 @@
             padding: 14px;
             display: inline-flex;
             text-align: center;
+            font-size: 17px;
+
         }
 
         a:hover {
@@ -268,7 +125,7 @@
         .nav_first_div_secound_part {
             justify-content: space-around;
             display: flex;
-            width: 16%;
+            width: 20%;
         }
         .border{
             border-right:2px solid #767676;
@@ -285,32 +142,214 @@
             color: rgba(0, 0, 0, 0);
         }
         
-        @media screen and (max-width: 606px) {
-            #content {
+
+        /* ------------------------------------------------------------------------------------------------------- */
+        
+        .search_div{
+            /* background: linear-gradient(rgb(0 0 0 / 53%), rgb(0 0 0 / 47%)), url('https://images.unsplash.com/photo-1671255672894-843cdb23e46a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80'); */
+            background-image: url('https://images.unsplash.com/photo-1559406041-c7d2b2e98690?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTU5Nzd8MHwxfHNlYXJjaHw1fHxzdHJlZXQtcGhvdG9ncmFwaHl8ZW58MHx8fHwxNjcyOTE1NzI1&ixlib=rb-4.0.3&q=80&w=1080');
+
+
+
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 43rem;
+        }
+        #search_text{
+            color: white;
+            width: 66.66667%;
+            position: relative;
+            margin: 0 auto;
+            top: 35%;
+        }
+        #search_text>h1{
+            font-size: 46px;
+        }
+        #search_text>p{
+            margin: 16px 0;
+            font-weight: 500;
+            font-size: 23px;
+            line-height: 35px;
+        }
+        input#searchv {
+            width: 100%;
+            border: none;
+            color: #111;
+            height: 4rem;
+            border-radius: 11px;
+            font-size: 25px;
+            padding-left: 30px;
+        }
+        input#searchv:focus{
+            outline: none;
+        }
+        .search_input {
+            margin-top: 35px;
+        }
+        .popup{
+            display: flex;
+            justify-content: center;
+            background: ghostwhite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 80%;
+            height: 88vh;
+            border-radius: 10px;
+            transition: .7s;
+        }
+        .button_c{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 35px;
+            height: 30px;
+            font-size: 26px;
+            border: none;
+            background: none;
+        }
+        .download{
+            text-transform: capitalize;
+            padding: 10px 20px;
+            background-color: rgb(60, 180, 110);
+            color: white;
+            border-radius: 5px;
+            position: absolute;
+            text-decoration: none;
+            top: 10px;
+            right: 10px;
+
+        }
+        .download_img{
+            height: 90%;
+            width: auto;
+            max-width: 80%;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+        .hide{
+            display: none;
+        }
+        #content{
+            columns: 3;
+            margin-top: 20px;
+            gap: 20px;
+            
+        }
+        #card_img{
+            width: 100%;
+            margin: 20px 0px;
+            gap: 20px;
+            height: 100%;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        #card_img>img {
+            width: 100%;
+        } 
+        .control{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .prev_button{
+            left: 20px;
+            font-size: 56px;
+            background: none;
+            border: none;
+        }
+        .next_button{
+            right: 20px;
+            font-size: 56px;
+            background: none;
+            border: none;
+        }
+        .nav_first_div{
+            width: 100%;
+        }
+        button.button3 {
+            font-size: 15px;
+            height: 44px;
+            line-height: 42px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #0000;
+        }
+        
+        @media screen and (max-width: 1228px) {
+            
+            input.search_header {
+                width: 300px;
+            }
+        }
+        @media screen and (max-width: 964px) {
+            input.search_header {
+                width: 250px;
+                font-size: 14px;
+
+            }
+
+            .fa-magnifying-glass:before, .fa-search:before {
+                content: "\f002";
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #content{
                 columns: 1;
                 margin-top: 20px;
                 gap: 20px;
-
-            }
-            .search_div{
-                height: 30rem;
-            }
-            #search_text {
-                top: 20%;
-            }
-            #search_text>p {
-                line-height: 30px;
-                font-size: 18px;
-            }
-            button.button3 {
-                padding: 16px 10px !important;
-                font-size: 16px !important;
-            }
-            #search_text>h1 {
-                font-size: 40px;
+                
             }
         }
+        @media only screen and (max-width: 600px) {
+            input.search_header {
+                
+                width: 200px !important;
+            }
+        }
+       
+        @media screen and (max-width: 892px) {
+            a#dis {
+                display: none;
+            }
+            input.search_header {
+                border: none;
+                width: 350px;
+                height: 50px;
+                color: rgb(124, 124, 124);
+                font-size: 18px;
+                background: none;
+            }
+            .nav_first_div_secound_part{
+                display: none;
+            }
+            .nav_first_div {
+                justify-content: center;
+            }
+            
+            /* --------------------------- */
+            
+        }
+        div#login_user {
+            margin-top: 16px;
+        }
+        span#user_name {
+            background: none;
+        }
+        div#user_popup {
+            position: fixed;
+            right: 173px;
+            top: 52px;
+            border: 1px solid #eaeae3d4;
+        }
+
     </style>
+        <script src="https://kit.fontawesome.com/1d73357de3.js" crossorigin="anonymous"> </script>
+
 </head>
 <body>
     <header>
@@ -336,6 +375,19 @@
                     <a href="#">Sign up</a>
     
                 </div>
+                 <!-- ------------------- -->
+                 <div class="nav_first_div_secound_part" id="login_user" style="display: none;">
+                    <a id="user" class="nav_a2"><i class="fa-regular fa-user"></i></a>
+                    <a class="nav_a2"><span id="user_name">Ayan</span></a>
+    
+                </div>
+                <div id="user_popup" style="display: none;">
+                    <a href="" class="nav_pop_user">View Profile</a>
+                    <hr>
+                    <a href="" id="logout" class="nav_pop_user">Log Out</a>
+                </div>
+                <!-- ------------------------------------------------------------ -->
+    
     
     
     
@@ -376,8 +428,8 @@
             <h1>Street Photography</h1>
             <p style="line-height: 1.6;">
                 When the streets around you become your canvas, what can you discover? <br>
-                From quiet passages in charming towns to the hustle and bustle of larger <br>
-                cities — this category examines street photography in every form.  </p>
+                 From quiet passages in charming towns to the hustle and bustle of larger <br>
+                 cities — this category examines street photography in every form.  </p>
             <!-- <p>Powered by creators everywhere.</p> -->
             <div class="search_input">
                 <!-- <button id="btn">submit to <b>Wallpapers</b> </button> -->
@@ -388,11 +440,11 @@
         
     </div>
     <div class="popup hide" id="popu">
-        <button class="button_c">X</button>
-        <a href="#" class="download">Download</a>
+        <button class="button_c"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#" class="download" download>Download</a>
         <img src="" alt="" class="download_img">
-        <button class="control prev_button">&lt;</button>
-        <button class="control next_button">&gt;</button>
+        <button class="control prev_button"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="control next_button"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div id="content"></div>
 </body>
