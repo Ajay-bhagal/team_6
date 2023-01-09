@@ -1,6 +1,6 @@
-let userdata=JSON.parse(localStorage.getItem("user-info")) ;
+let userdata=JSON.parse(localStorage.getItem("user-info")) ||{};
     console.log(userdata);
-    if(userdata!=null){
+    if(userdata.user!=null){
         console.log(userdata)
         document.getElementById("user_name").innerHTML=userdata.user;
         document.getElementById("login_user").style.display="block";
