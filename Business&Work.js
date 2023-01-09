@@ -4,7 +4,8 @@ let userdata=JSON.parse(localStorage.getItem("user-info")) ||{};
         console.log(userdata)
         document.getElementById("user_name").innerHTML=userdata.user;
         document.getElementById("login_user").style.display="block";
-        document.getElementById("logout_user").style.display="none";
+        // document.getElementById("logout_user").style.display="none";
+        document.querySelector(".nav_first_div_secound_part").style.display="none";
     }
 document.getElementById("user").addEventListener("click",()=>{
 
